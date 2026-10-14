@@ -29,7 +29,7 @@ MODEL_API_URL=http://127.0.0.1:8080 MODEL_ID=stepuli-v8 npm start
 
 [Download the 6.56 MB adapter from Hugging Face](https://huggingface.co/aibluks/stepuli-gemma-4-e2b-v8-experimental/resolve/0c0c453e625cc463bb079ffdec17d577b9a570d1/tutor-v8-response-pilot-lora.gguf?download=true) · [GitHub pre-release download](https://github.com/aibluks/stepuli/releases/download/v0.1.0-v8-experimental/tutor-v8-response-pilot-lora.gguf).
 
-Both public adapter downloads were fetched anonymously and verified against the SHA-256 below. The weight file is distributed separately and is not stored in this Git repository. Save it as `models/experimental/tutor-v8-response-pilot-lora.gguf` before using the adapter command below. The adapter requires a matching unchanged base; it is not a standalone model. The standalone model is available through the verified GitHub transport download below. The single-file Hugging Face upload remains pending and unverified.
+Both public adapter downloads were fetched anonymously and verified against the SHA-256 below. The weight file is distributed separately and is not stored in this Git repository. Save it as `models/experimental/tutor-v8-response-pilot-lora.gguf` before using the adapter command below. The adapter requires a matching unchanged base; it is not a standalone model. The standalone model has verified single-file Hugging Face and GitHub transport downloads below.
 
 SHA-256: `5df52bab5cad5d667f302b897219e9dfb46f28dc16494854b0c10128bfced9ec`
 
@@ -54,11 +54,15 @@ In another terminal, start the app with the matching alias as above. `-ngl 0` is
 
 ## Download and run the standalone Q4 model
 
+[Download the complete single-file GGUF from Hugging Face](https://huggingface.co/aibluks/stepuli-gemma-4-e2b-v8-experimental/resolve/544b2b3ebb991784e4542414479dd3e902fb72dc/stepuli-v8-experimental-Q4_K_M.gguf?download=true). Save it as `models/local/stepuli-v8-experimental-Q4_K_M.gguf` and compare its SHA-256 with the value below. Check it with `sha256sum models/local/stepuli-v8-experimental-Q4_K_M.gguf` on Linux or `shasum -a 256 models/local/stepuli-v8-experimental-Q4_K_M.gguf` on macOS. This immutable revision's complete 3.11 GB file was downloaded anonymously and verified, along with the adapter and all eight metadata files.
+
+Alternatively, use the GitHub transport route:
+
 [GitHub experimental release](https://github.com/aibluks/stepuli/releases/tag/v0.1.0-v8-experimental) provides the complete standalone model as **16 byte transport parts** plus a [checked download script](https://github.com/aibluks/stepuli/releases/download/v0.1.0-v8-experimental/download.sh). All 16 public downloads were fetched anonymously; each part hash and the ordered reconstructed full-file SHA-256 matched the frozen model. The byte parts cannot be loaded separately as GGUF files.
 
-The script downloads and checks the parts, then assembles `stepuli-v8-experimental-Q4_K_M.gguf`: **3,106,738,304 bytes**, SHA-256 `00ab71619a71fad1260eb3ea5ce6071e4a4face0a2b36a4a7b0a918f0690626b`. Allow at least **6.3 GB free disk** for retained parts plus the assembled file; failed-transfer backups may need extra space. Disk space is separate from runtime RAM. The single-file Hugging Face upload is still pending and unverified.
+The script downloads and checks the parts, then assembles `stepuli-v8-experimental-Q4_K_M.gguf`: **3,106,738,304 bytes**, SHA-256 `00ab71619a71fad1260eb3ea5ce6071e4a4face0a2b36a4a7b0a918f0690626b`. Allow at least **6.3 GB free disk** for retained parts plus the assembled file; failed-transfer backups may need extra space. Disk space is separate from runtime RAM. The Hugging Face single-file download and the ordered GitHub parts both match this exact full-file SHA-256.
 
-From this checkout, copy the script into an ignored dedicated download directory and run it:
+For the GitHub route, run these commands from the checkout. If you used the Hugging Face file, place it in `models/local`, verify its checksum, and start with the `llama-server` command:
 
 ```sh
 mkdir -p models/local

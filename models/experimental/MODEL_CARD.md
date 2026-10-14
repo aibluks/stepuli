@@ -16,7 +16,7 @@ tags:
 
 Publisher: **AI Bluks** (`aibluks`). Stepuli is an AI Bluks project.
 
-Stepuli is an experimental English maths tutoring project prepared for reproducible evaluation and further development. This source repository publishes experiment documentation; model weights are distributed separately. The small adapter has verified public downloads on Hugging Face and GitHub. The complete standalone model has a verified GitHub transport download; the single-file Hugging Face upload remains pending and unverified. It is **not a validated tutor for children**. It can falsely praise incorrect learner answers, lose the current conversation step, and produce incomplete worked solutions. Download availability does not mean this model is recommended over the untouched base.
+Stepuli is an experimental English maths tutoring project prepared for reproducible evaluation and further development. This source repository publishes experiment documentation; model weights are distributed separately. The small adapter has verified public downloads on Hugging Face and GitHub. The complete standalone model has verified single-file Hugging Face and GitHub transport downloads. It is **not a validated tutor for children**. It can falsely praise incorrect learner answers, lose the current conversation step, and produce incomplete worked solutions. Download availability does not mean this model is recommended over the untouched base.
 
 ## What was trained
 
@@ -43,16 +43,17 @@ The old 127-question suite overlaps development and validation material; it is n
 
 A separate local Q4 untouched-base test scored 14/20 nonthinking and 20/20 thinking on the fresh numeric set. That result uses different precision and output budgets and is not a matched comparison with this BF16 pilot. It demonstrates why this fine-tuned release must not be advertised as the best available maths model. The earlier untouched-base thinking result on a different 36-case teaching test is also not interchangeable with these nonthinking scores.
 
-## Standalone offline model: verified GitHub download
+## Standalone offline model: verified public downloads
 
 `stepuli-v8-experimental-Q4_K_M.gguf` is a standalone model requiring no separate base or LoRA file.
 
 - Bytes: **3,106,738,304** (about 3.11 GB, or 2.89 GiB).
 - SHA256: `00ab71619a71fad1260eb3ea5ce6071e4a4face0a2b36a4a7b0a918f0690626b`.
-- Status: all 16 GitHub transport parts and six metadata assets were downloaded anonymously and verified. Ordered actual part bytes reproduced the exact full-model SHA256 above. The single-file Hugging Face upload is still pending and unverified.
+- Status: all 16 GitHub transport parts and six metadata assets were downloaded anonymously and verified. Ordered actual part bytes reproduced the exact full-model SHA256 above. The full single-file Hugging Face download, adapter, and eight metadata files were also anonymously fetched and hash-verified at immutable revision `544b2b3ebb991784e4542414479dd3e902fb72dc`.
+- Single-file download: [complete 3.11 GB GGUF on Hugging Face](https://huggingface.co/aibluks/stepuli-gemma-4-e2b-v8-experimental/resolve/544b2b3ebb991784e4542414479dd3e902fb72dc/stepuli-v8-experimental-Q4_K_M.gguf?download=true).
 - Download: [experimental GitHub release](https://github.com/aibluks/stepuli/releases/tag/v0.1.0-v8-experimental), with [download.sh](https://github.com/aibluks/stepuli/releases/download/v0.1.0-v8-experimental/download.sh) and [transport manifest](https://github.com/aibluks/stepuli/releases/download/v0.1.0-v8-experimental/transport-manifest.json).
 
-These are byte transport parts, **not independently loadable GGUF shards**. The script checks all parts and assembles the single standalone GGUF. Allow at least **6.3 GB free disk** for parts plus the assembled file, with extra space for failed-transfer backups. Copy `models/experimental/transport/download.sh` into the checkout's ignored `models/local` directory, then run `sh models/local/download.sh`; see the root README for full setup. Runtime RAM and speed on Linux/Pi are unmeasured. Do not apply an additional LoRA to the assembled model.
+The GitHub route uses byte transport parts, **not independently loadable GGUF shards**. The script checks all parts and assembles the single standalone GGUF. Allow at least **6.3 GB free disk** for parts plus the assembled file, with extra space for failed-transfer backups. Copy `models/experimental/transport/download.sh` into the checkout's ignored `models/local` directory, then run `sh models/local/download.sh`; see the root README for full setup. Runtime RAM and speed on Linux/Pi are unmeasured. Do not apply an additional LoRA to the assembled model.
 
 It was created from the unchanged Q4_K_M base with SHA256 `740185b21d22ceb83a11c3aa62ad5842ef32c70f6096d756bbee85a1e4ec34b8` plus the V8 GGUF LoRA adapter with SHA256 `5df52bab5cad5d667f302b897219e9dfb46f28dc16494854b0c10128bfced9ec`. Official llama.cpp b11429 (`d81235049`) merged 140 adapted tensors by dequantizing those tensors to F32, adding the scaled LoRA, and saving them as F16; the other 461 tensors were copied. The resulting mixed model was then quantized under Q4_K_M policy with explicit original-type overrides for every unadapted tensor. No already-quantized unadapted tensors were requantized. All 461 were verified byte-for-byte unchanged. The final compact file differs from the original base in 136 tensors; four adapted tensors quantized back to their original bytes.
 
@@ -67,7 +68,7 @@ See `full-model/README.md`, `full-model/validation-summary.md`, and the exact-ar
 This GitHub source repository contains documentation and evaluation evidence. Model weights are distributed separately:
 
 - The verified `tutor-v8-response-pilot-lora.gguf` download is 6,556,960 bytes and requires an unchanged compatible base GGUF. [Hugging Face](https://huggingface.co/aibluks/stepuli-gemma-4-e2b-v8-experimental/resolve/0c0c453e625cc463bb079ffdec17d577b9a570d1/tutor-v8-response-pilot-lora.gguf?download=true) and [GitHub pre-release](https://github.com/aibluks/stepuli/releases/download/v0.1.0-v8-experimental/tutor-v8-response-pilot-lora.gguf) full downloads both matched SHA-256 `5df52bab5cad5d667f302b897219e9dfb46f28dc16494854b0c10128bfced9ec`. The file is not stored in this Git tree.
-- The complete standalone Q4 model is distributed as 16 verified byte parts in the linked GitHub release; `transport/` contains the small script, manifest, checksums, license and notice. Model weights are outside this Git tree.
+- The complete standalone Q4 model is available as the verified single Hugging Face file or as 16 verified byte parts in the linked GitHub release; `transport/` contains the small script, manifest, checksums, license and notice. Model weights are outside this Git tree.
 - `SHA256SUMS`: exact adapter integrity.
 - `LICENSE` and `NOTICE`: upstream license and modification provenance.
 - `results/`: sanitized evaluation results, settings and training evidence.
@@ -80,6 +81,6 @@ Do not load this adapter on `english-tutor-v2-Q4_K_M.gguf`, a previously merged 
 
 Intended for adult developer experiments with English maths tutoring. It does not establish coverage or mastery of a full grade 7 curriculum, other subjects, child safeguarding, offline classroom readiness, or performance on an 8 GB Linux computer or Raspberry Pi. An app interface, exact arithmetic checker, and additional teaching controls are separate systems; raw model scores must not be attributed to those systems or vice versa.
 
-The GitHub project is [aibluks/stepuli](https://github.com/aibluks/stepuli). Complete standalone weights are hosted separately in the linked GitHub release; cloning the source does not download them. The project web app currently uses its earlier model and guides. This V8 pilot has not been promoted into that app. It has no proved latency, concurrency, or memory guarantee on target hardware. Measure the complete app on the intended device before use.
+The GitHub project is [aibluks/stepuli](https://github.com/aibluks/stepuli). Complete standalone weights are hosted separately at the linked Hugging Face revision and GitHub release; cloning the source does not download them. The project web app currently uses its earlier model and guides. This V8 pilot has not been promoted into that app. It has no proved latency, concurrency, or memory guarantee on target hardware. Measure the complete app on the intended device before use.
 
 Gemma 4 is licensed under [Apache 2.0](https://ai.google.dev/gemma/apache_2). The [older Gemma terms page](https://ai.google.dev/gemma/terms/) explicitly points Gemma 4 to its separate license. Model origin: [Google Gemma 4 E2B](https://huggingface.co/google/gemma-4-E2B-it), training base: [Unsloth Gemma 4 E2B](https://huggingface.co/unsloth/gemma-4-E2B-it). This project is independent and does not claim Google endorsement.
