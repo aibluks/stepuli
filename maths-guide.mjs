@@ -53,13 +53,16 @@ function lesson(p){
  }
  return {question,step,explanation,next,work};
 }
+// A short answer turn can contain a value alone or an explicit answer phrase.
+function learnerValue(text){return text.match(/^\s*(?:(?:my answer is|i got)\s*)?(\d+(?:\s*\/\s*\d+)?)[.!?]?\s*$/i)?.[1]??null;}
 export function mathsGuide(messages){
  const mixed=expressionGuide(messages);if(mixed)return mixed;
  const last=messages.at(-1)?.content||'';
- const bare=/^\s*\d+(?:\s*\/\s*\d+)?[.!?]?\s*$/.test(last);
+ const answerValue=learnerValue(last),bare=answerValue!==null;
  let p=bare&&messages.length>1?null:recognise(last);
- const shortFollow=/^\s*\d+(?:\s*\/\s*\d+)?[.!?]?\s*$/.test(last)||/stuck|understand|worked|solution|more hint|don't know|do not know/i.test(last);
- if(!p&&shortFollow){for(let i=messages.length-2;i>=0;i--){if(messages[i].role==='user'&&(p=recognise(messages[i].content)))break;}}
+ const shortFollow=bare||/stuck|understand|worked|solution|more hint|don't know|do not know/i.test(last);
+ if(!p&&shortFollow){for(let i=messages.length-2;i>=0;i--){// A bare fraction after the first question is a learner answer, not a new problem.
+ if(messages[i].role==='user'&&(i===0||learnerValue(messages[i].content)===null)&&(p=recognise(messages[i].content)))break;}}
  if(!p)return null;
  // Avoid misleading one-counter prompts for zero arithmetic; use the model instead.
  if(p.a.n===0n||p.b.n===0n)return null;
@@ -67,8 +70,8 @@ export function mathsGuide(messages){
  const worked=wantsWorked(last);
  let reply;
  if(worked)reply=`Let’s work through it together. ${l.work}`;
- else if(/^\s*\d+(?:\s*\/\s*\d+)?[.!?]?\s*$/.test(last)){
-  let answer;try{answer=parse(last.trim().replace(/[.!?]$/,''));}catch{return null;}
+ else if(bare){
+  let answer;try{answer=parse(answerValue);}catch{return null;}
   if(equal(answer,p.result))reply=`Yes, ${p.expression} = ${fmt(p.result)}. That is the correct final answer!`;
   else if(previous.includes(l.question))reply=equal(answer,l.step)?`Yes, that step is correct. ${l.explanation} ${l.next}`:`Let’s check the small step. ${l.explanation} ${l.next}`;
   else reply=equal(answer,p.result)?`Yes, ${p.expression} = ${fmt(p.result)}. You got it!`:`Not quite. Let’s try a smaller step. ${l.question}`;

@@ -36,3 +36,30 @@ test('ambiguous, unsupported and invalid expressions are delegated',()=>{
  for(const q of ['2 + 3 * 4','(2 + 3) * 4','2.5 + 1.5','-2 + 3','2 + 2 and 3 + 3','What is a noun?','1/0 + 1/2','4 / 0','2 + 999999'])assert.equal(recognise(q),null,q);
 });
 test('compact multiplication notation works',()=>assert.match(ask('Show a worked example of 4x4').reply,/4 × 4 = 16/));
+
+function conversation(question,attempt){
+ const history=[{role:'user',content:question}];
+ for(const content of [attempt,'I am stuck. Show every step and the final answer now.']){
+  const reply=mathsGuide(history);assert.ok(reply,'The original question must be recognised');
+  history.push({role:'assistant',content:reply.reply},{role:'user',content});
+ }
+ return mathsGuide(history);
+}
+test('a fraction attempt followed by stuck completes the original fraction addition',()=>{
+ for(const attempt of ['4/12','My answer is 4/12','I got 4/12.']){
+  const result=conversation('Help me with 3/4 + 1/8. Give me one small first step.',attempt);
+  assert.match(result.reply,/3\/4 \+ 1\/8 = 7\/8/);
+  assert.doesNotMatch(result.reply,/4 \/ 12 = 1\/3/);
+ }
+});
+test('a wrong mixed-operation step followed by stuck retains the original expression',()=>{
+ const result=conversation('Help me with 3 + 5 - 6 * 4 / 2. Give me one small first step.','22');
+ assert.match(result.reply,/6 × 4 = 24/);assert.match(result.reply,/8 − 12 = [-−]4/);
+});
+test('an explicitly new division question and an initial fraction still start a new problem',()=>{
+ const initial=ask('Please show all steps for 4 / 12.');
+ assert.match(initial.reply,/4 \/ 12 = 1\/3/);
+ const first=ask('Help me with 3/4 + 1/8.');
+ const next=mathsGuide([{role:'user',content:'Help me with 3/4 + 1/8.'},{role:'assistant',content:first.reply},{role:'user',content:'New question: please show every step for 4 / 12.'}]);
+ assert.match(next.reply,/4 \/ 12 = 1\/3/);assert.doesNotMatch(next.reply,/= 7\/8/);
+});
