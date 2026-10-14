@@ -1,0 +1,29 @@
+{
+  "gpu": "NVIDIA L4",
+  "training_samples_excluding_step20_boundary": {
+    "samples": 43,
+    "compute_percent_mean": 88.76744186046511,
+    "compute_percent_median": 100.0,
+    "peak_vram_percent": 59.06920204914474,
+    "peak_temperature_c": 81.0,
+    "power_watts_mean": 66.84674418604651
+  },
+  "after_step5_excluding_step20_boundary": {
+    "samples": 28,
+    "compute_percent_mean": 98.92857142857143,
+    "compute_percent_median": 100.0,
+    "peak_vram_percent": 59.06920204914474,
+    "peak_temperature_c": 81.0,
+    "power_watts_mean": 72.07035714285715
+  },
+  "runtime_seconds": 93.4593,
+  "optimizer_steps": 20,
+  "effective_batch": 32,
+  "actual_example_presentations": 640,
+  "corrected_examples_per_second": 6.847900636961758,
+  "corrected_optimizer_steps_per_second": 0.21399689490505494,
+  "trainer_reported_examples_per_second": 40.231,
+  "trainer_reported_steps_per_second": 1.263,
+  "throughput_note": "Trainer reports the configured 3760 examples and 118 steps divided by the early-stopped runtime. Actual work was 20 steps \u00d7 32 examples = 640 presentations. Runtime includes training startup; it excludes matched evaluation and export.",
+  "telemetry_note": "Samples polled every 2 seconds. Phase and last-completed-step labels approximate boundaries. Setup, saving, and the step 20 boundary are excluded. Step 0 includes warmup or compilation; the warm subset begins at step 5. VRAM percentage is not compute utilization. Host RAM was not measured here."
+}

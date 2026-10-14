@@ -1,0 +1,16 @@
+{
+  "optimizer_steps_before_correction": 0,
+  "checks": {
+    "train": {
+      "rows": 3760,
+      "only_final_newline_omitted": 3760,
+      "input_tokens_exact": true
+    },
+    "validation": {
+      "rows": 940,
+      "only_final_newline_omitted": 940,
+      "input_tokens_exact": true
+    }
+  },
+  "correction": "Rebuild complete canonical final-turn labels directly from identical native input IDs; preserve terminator and trailing newline. Strict equality remains enforced."
+}

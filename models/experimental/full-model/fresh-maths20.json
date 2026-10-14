@@ -1,0 +1,142 @@
+[
+  {
+    "topic": "addition",
+    "question": "411 + 93",
+    "answer": "504",
+    "expression": "411 + 93",
+    "kind": "numeric"
+  },
+  {
+    "topic": "addition",
+    "question": "424 + 50",
+    "answer": "474",
+    "expression": "424 + 50",
+    "kind": "numeric"
+  },
+  {
+    "topic": "subtraction",
+    "question": "203 - 48",
+    "answer": "155",
+    "expression": "203 - 48",
+    "kind": "numeric"
+  },
+  {
+    "topic": "subtraction",
+    "question": "-19 - 18",
+    "answer": "-37",
+    "expression": "-19 - 18",
+    "kind": "numeric"
+  },
+  {
+    "topic": "multiplication",
+    "question": "17 * 12",
+    "answer": "204",
+    "expression": "17 * 12",
+    "kind": "numeric"
+  },
+  {
+    "topic": "multiplication",
+    "question": "-32 * 12",
+    "answer": "-384",
+    "expression": "-32 * 12",
+    "kind": "numeric"
+  },
+  {
+    "topic": "division",
+    "question": "407 / 11",
+    "answer": "37",
+    "expression": "407 / 11",
+    "kind": "numeric"
+  },
+  {
+    "topic": "division",
+    "question": "559 / 13",
+    "answer": "43",
+    "expression": "559 / 13",
+    "kind": "numeric"
+  },
+  {
+    "topic": "fraction_add",
+    "question": "(7/3) + (3/9)",
+    "answer": "8/3",
+    "expression": "(7/3) + (3/9)",
+    "kind": "numeric"
+  },
+  {
+    "topic": "fraction_add",
+    "question": "(7/12) + (4/12)",
+    "answer": "11/12",
+    "expression": "(7/12) + (4/12)",
+    "kind": "numeric"
+  },
+  {
+    "topic": "fraction_sub",
+    "question": "(9/6) - (1/7)",
+    "answer": "19/14",
+    "expression": "(9/6) - (1/7)",
+    "kind": "numeric"
+  },
+  {
+    "topic": "fraction_sub",
+    "question": "(9/3) - (5/4)",
+    "answer": "7/4",
+    "expression": "(9/3) - (5/4)",
+    "kind": "numeric"
+  },
+  {
+    "topic": "fraction_mul",
+    "question": "(5/11) * (1/9)",
+    "answer": "5/99",
+    "expression": "(5/11) * (1/9)",
+    "kind": "numeric"
+  },
+  {
+    "topic": "fraction_mul",
+    "question": "(3/12) * (1/10)",
+    "answer": "1/40",
+    "expression": "(3/12) * (1/10)",
+    "kind": "numeric"
+  },
+  {
+    "topic": "fraction_div",
+    "question": "(3/7) / (9/5)",
+    "answer": "5/21",
+    "expression": "(3/7) / (9/5)",
+    "kind": "numeric"
+  },
+  {
+    "topic": "fraction_div",
+    "question": "(2/12) / (3/12)",
+    "answer": "2/3",
+    "expression": "(2/12) / (3/12)",
+    "kind": "numeric"
+  },
+  {
+    "topic": "decimals",
+    "question": "5.57 + 3.18",
+    "answer": "35/4",
+    "expression": "5.57 + 3.18",
+    "kind": "numeric"
+  },
+  {
+    "topic": "decimals",
+    "question": "8.71 - 3.18",
+    "answer": "553/100",
+    "expression": "8.71 - 3.18",
+    "kind": "numeric"
+  },
+  {
+    "topic": "mixed_order",
+    "question": "4 + 12 - 9 * 7 / 6",
+    "answer": "11/2",
+    "expression": "4 + 12 - 9 * 7 / 6",
+    "kind": "numeric"
+  },
+  {
+    "topic": "mixed_order",
+    "question": "(8 - 3) * 12 + 2 / 6",
+    "answer": "181/3",
+    "expression": "(8 - 3) * 12 + 2 / 6",
+    "kind": "numeric"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "filename": "experimental-v8-q4base-merged-mixed.gguf",
+  "bytes": 3532038240,
+  "sha256": "55d5b4196d03615822361055b9d3f7bfbf15f868858e5cb00ccb6cfd6499f3b7",
+  "base_sha256": "740185b21d22ceb83a11c3aa62ad5842ef32c70f6096d756bbee85a1e4ec34b8",
+  "adapter_sha256": "5df52bab5cad5d667f302b897219e9dfb46f28dc16494854b0c10128bfced9ec",
+  "tensor_count": 601,
+  "merged_tensor_count": 140,
+  "tensor_types": {
+    "F16": 140,
+    "F32": 353,
+    "Q6_K": 17,
+    "Q4_K": 89,
+    "BF16": 1,
+    "Q5_K": 1
+  },
+  "general_architecture": "gemma4",
+  "general_file_type": 1,
+  "inherited_general_name": "Gemma-4-E2B-It",
+  "tokenizer_and_template_unchanged": true,
+  "merger_binary": "llama.cpp b11429 d81235049",
+  "merge_semantics": "Adapted quantized tensors dequantized toF32, scaledLoRA added, savedF16. All others copied atoriginaltype. Not an originalBF16 merge; notuniformQ4."
+}

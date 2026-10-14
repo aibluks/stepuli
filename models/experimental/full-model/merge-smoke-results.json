@@ -1,0 +1,244 @@
+{
+  "settings": {
+    "host": "127.0.0.1",
+    "port": 8082,
+    "temperature": 0,
+    "max_tokens": 512,
+    "enable_thinking": false,
+    "context": 4096,
+    "gpu_layers": 99,
+    "parallel": 1,
+    "probes_sha256": "18772bf2ff514cd3d44a559b42bebd8954e7a7571c69e1eba4f81f7d633abc64",
+    "purpose": "Small frozen output comparison, not full quality or hardware benchmark."
+  },
+  "results": {
+    "base-plus-adapter": [
+      {
+        "id": "mixed-user-required",
+        "reply": "1",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 0.16681187506765127,
+        "usage": {
+          "completion_tokens": 2,
+          "prompt_tokens": 51,
+          "total_tokens": 53,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "request_sha256": "23b4201d0d657bfbb256633cf344768f78c6bd1fcf037c2e45988b484695872a"
+      },
+      {
+        "id": "fraction-subtraction",
+        "reply": "11/30",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 0.1598210419761017,
+        "usage": {
+          "completion_tokens": 6,
+          "prompt_tokens": 52,
+          "total_tokens": 58,
+          "prompt_tokens_details": {
+            "cached_tokens": 33
+          }
+        },
+        "request_sha256": "015fdb1234a5361211ea8414d8dac703e60c40bd7d53b4d6ac4c11415c66a447"
+      },
+      {
+        "id": "division",
+        "reply": "35",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 0.10581324994564056,
+        "usage": {
+          "completion_tokens": 3,
+          "prompt_tokens": 49,
+          "total_tokens": 52,
+          "prompt_tokens_details": {
+            "cached_tokens": 33
+          }
+        },
+        "request_sha256": "28abb54469862d9b3a67f599f91dabdb4baa558d2a1d3b0861ad7b3c420870f3"
+      },
+      {
+        "id": "fresh-mixed-correct-step",
+        "reply": "That is correct! So now the problem looks like this:\n\n$7 + 9 - 24 / 2$\n\nNext, we do the division. What is 24 divided by 2?",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 0.9780451250262558,
+        "usage": {
+          "completion_tokens": 45,
+          "prompt_tokens": 239,
+          "total_tokens": 284,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "request_sha256": "9f04891f9f7f00b576e612d4aff8f0f0dda26c3c4694d923ee97075910924c20"
+      },
+      {
+        "id": "fresh-mixed-wrong-step",
+        "reply": "That is correct! So now the problem looks like this:\n\n$7 + 9 - 22 / 2$\n\nNext, we do the division. What is 22 divided by 2?",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 0.7910890000639483,
+        "usage": {
+          "completion_tokens": 45,
+          "prompt_tokens": 239,
+          "total_tokens": 284,
+          "prompt_tokens_details": {
+            "cached_tokens": 228
+          }
+        },
+        "request_sha256": "7baa43cae9236e7840d74acf789456b51905f811914692f6c4c593b3bca6aa01"
+      },
+      {
+        "id": "fresh-capacity-wrong-step",
+        "reply": "That's a good start! You are thinking about the number 235.\n\nRemember, we need to change litres to millilitres first.\n\n**Step 1: Convert litres to millilitres.**\nSince 1 litre = 1000 millilitres, how do you calculate how many millilitres are in 2.35 litres?\n\n**Step 2: Add the amounts.**\nOnce you have the first amount in millilitres, you will add the 450 millilitres that were added.\n\nWhat is the value of 2.35 litres in millilitres?",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 2.413753499975428,
+        "usage": {
+          "completion_tokens": 126,
+          "prompt_tokens": 253,
+          "total_tokens": 379,
+          "prompt_tokens_details": {
+            "cached_tokens": 182
+          }
+        },
+        "request_sha256": "ad7041725f8e4c857f6252a6feb0fc4496f22c1e97517e53df05095963dcc9bf"
+      },
+      {
+        "id": "fresh-roots-stuck",
+        "reply": "I understand you want the full solution. I am happy to show you how to find the positive square root of 196!\n\nTo find the square root of a number, we are looking for a number that, when multiplied by itself, equals that number.\n\nWe need to find a number that, when multiplied by itself, equals 196.\n\nLet's try some numbers we know:\n*   $10 \\times 10 = 100$ (Too small)\n*   $15 \\times 15 = 225$ (Too big)\n\nSince 196 is between 100 and 225, the square root must be between 10 and 15.\n\nLet's try a number in the middle, like 14:\n$14 \\times 14 = ?$\n\nCan you calculate $14 \\times 14$?",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 3.8766309999627993,
+        "usage": {
+          "completion_tokens": 199,
+          "prompt_tokens": 248,
+          "total_tokens": 447,
+          "prompt_tokens_details": {
+            "cached_tokens": 181
+          }
+        },
+        "request_sha256": "4a26aa16a071a5b699ce1664c5d896c31866d7a7b98103f5fe6521dcb1127a75"
+      }
+    ],
+    "merged": [
+      {
+        "id": "mixed-user-required",
+        "reply": "1",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 0.4086823749821633,
+        "usage": {
+          "completion_tokens": 2,
+          "prompt_tokens": 51,
+          "total_tokens": 53,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "request_sha256": "8a4200d912279abe3f195d45d94cb4e3d71432edcce77ecc2ab33495ebc874da"
+      },
+      {
+        "id": "fraction-subtraction",
+        "reply": "11/30",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 0.17976441595237702,
+        "usage": {
+          "completion_tokens": 6,
+          "prompt_tokens": 52,
+          "total_tokens": 58,
+          "prompt_tokens_details": {
+            "cached_tokens": 33
+          }
+        },
+        "request_sha256": "2d2610c2865c9f7e953b63e946fc29f3b9b39858617c856610b8f61d7caf64ca"
+      },
+      {
+        "id": "division",
+        "reply": "35",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 0.12093833391554654,
+        "usage": {
+          "completion_tokens": 3,
+          "prompt_tokens": 49,
+          "total_tokens": 52,
+          "prompt_tokens_details": {
+            "cached_tokens": 33
+          }
+        },
+        "request_sha256": "4f2cc704b43db5200b4643e7ccdf18a91d683ed75ca1b98c9e31f22a8e20320a"
+      },
+      {
+        "id": "fresh-mixed-correct-step",
+        "reply": "That is correct! So now the problem looks like this:\n\n$7 + 9 - 24 / 2$\n\nNext, we do the division. What is 24 divided by 2?",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 1.3155389160383493,
+        "usage": {
+          "completion_tokens": 45,
+          "prompt_tokens": 239,
+          "total_tokens": 284,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "request_sha256": "9f150f33f51a5f72eefd03acc6e8a1fc3cb69ad086c7c90f4149d6c3de209f66"
+      },
+      {
+        "id": "fresh-mixed-wrong-step",
+        "reply": "That is correct! So now the problem looks like this:\n\n$7 + 9 - 22 / 2$\n\nNext, we do the division. What is 22 divided by 2?",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 1.1395354999694973,
+        "usage": {
+          "completion_tokens": 45,
+          "prompt_tokens": 239,
+          "total_tokens": 284,
+          "prompt_tokens_details": {
+            "cached_tokens": 228
+          }
+        },
+        "request_sha256": "57a67eb971d4147d205dfdd172c404e6183e487d4391b127eba94238deffa2e6"
+      },
+      {
+        "id": "fresh-capacity-wrong-step",
+        "reply": "That's a good start! You are thinking about the number 235.\n\nRemember, we need to change litres to millilitres first.\n\n**Next step:** How do you convert 2.35 litres into millilitres?",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 1.4406850000377744,
+        "usage": {
+          "completion_tokens": 51,
+          "prompt_tokens": 253,
+          "total_tokens": 304,
+          "prompt_tokens_details": {
+            "cached_tokens": 182
+          }
+        },
+        "request_sha256": "aa30d2509be7930b443241dc0333b12959b3c20a10757c82b8f290c77ac0b9cf"
+      },
+      {
+        "id": "fresh-roots-stuck",
+        "reply": "I understand you want the full solution. I am happy to show you how to find the positive square root of 196!\n\nTo find the square root of a number, we are looking for a number that, when multiplied by itself, equals that number.\n\nWe need to find a number that, when multiplied by itself, equals 196.\n\nLet's try some numbers we know:\n*   $10 \\times 10 = 100$ (Too small)\n*   $15 \\times 15 = 225$ (Too big)\n\nSince 196 is between 100 and 225, the square root must be between 10 and 15.\n\nLet's try a number in the middle, like 14:\n$14 \\times 14 = ?$\n\nCan you calculate $14 \\times 14$?",
+        "reasoning": null,
+        "finish_reason": "stop",
+        "seconds": 4.630753125064075,
+        "usage": {
+          "completion_tokens": 199,
+          "prompt_tokens": 248,
+          "total_tokens": 447,
+          "prompt_tokens_details": {
+            "cached_tokens": 181
+          }
+        },
+        "request_sha256": "6cb6692fb7cbe6e15b0f742f1fb49d85d894a91f95757252a754b9d58f0a16ff"
+      }
+    ]
+  }
+}

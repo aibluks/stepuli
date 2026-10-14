@@ -1,0 +1,56 @@
+{
+  "settings": {
+    "model": "stepuli-v8-experimental-q4",
+    "temperature": 0,
+    "max_tokens": 512,
+    "thinking": false,
+    "context": 4096,
+    "probes_sha256": "47642c6a82409157ec5e11425b02394f1fe0ea6f6c801bb5abbadd840955a003",
+    "q4_sha256": "00ab71619a71fad1260eb3ea5ce6071e4a4face0a2b36a4a7b0a918f0690626b",
+    "precision_note": "Only140 adapted F16 tensors quantized under Q4_K_M policy. All461 unadapted tensors preserved byte-for-byte via explicit type overrides. Derived from an already Q4-quantized base, not a merge into originalBF16 weights."
+  },
+  "results": [
+    {
+      "id": "mixed-user-required",
+      "reply": "1",
+      "finish_reason": "stop",
+      "seconds": 0.11230112495832145
+    },
+    {
+      "id": "fraction-subtraction",
+      "reply": "11/30",
+      "finish_reason": "stop",
+      "seconds": 0.17855904204770923
+    },
+    {
+      "id": "division",
+      "reply": "35",
+      "finish_reason": "stop",
+      "seconds": 0.12248037499375641
+    },
+    {
+      "id": "fresh-mixed-correct-step",
+      "reply": "That is correct! So now the problem looks like this:\n\n$7 + 9 - 24 / 2$\n\nNext, we do the division. What is 24 divided by 2?",
+      "finish_reason": "stop",
+      "seconds": 1.1663310839794576
+    },
+    {
+      "id": "fresh-mixed-wrong-step",
+      "reply": "That is correct! So now the problem looks like this:\n\n$7 + 9 - 22 / 2$\n\nNext, we do the division. What is 22 divided by 2?",
+      "finish_reason": "stop",
+      "seconds": 0.9342283749720082
+    },
+    {
+      "id": "fresh-capacity-wrong-step",
+      "reply": "That's a good start! You are thinking about the number 235.\n\nRemember, we need to change the litres into millilitres first.\n\n**Next step:** How do you convert 2.35 litres into millilitres?",
+      "finish_reason": "stop",
+      "seconds": 1.0351119170663878
+    },
+    {
+      "id": "fresh-roots-stuck",
+      "reply": "I understand you want the full solution. I am happy to show you how to find the positive square root of 196!\n\nTo find the square root of a number, we are looking for a number that, when multiplied by itself, equals that number.\n\nSo, we need to find a number that, when multiplied by itself, equals 196.\n\nLet's try some numbers we know:\n*   $10 \\times 10 = 100$ (Too small)\n*   $15 \\times 15 = 225$ (Too big)\n\nSince 196 is between 100 and 225, the square root must be between 10 and 15.\n\nLet's try a number in the middle, like 14:\n$14 \\times 14 = ?$\n\nCan you calculate $14 \\times 14$?",
+      "finish_reason": "stop",
+      "seconds": 3.7074116250732914
+    }
+  ]
+}

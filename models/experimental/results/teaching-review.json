@@ -1,0 +1,546 @@
+{
+  "reviewer": "Codex manual review",
+  "teacher_reviewed": false,
+  "count": 36,
+  "sources": {
+    "base-v8-matched-nonthinking-teaching.json": "66cb60540d7ca6c549942877c7cd96e2068f38007de02cae4cea75eeb5aa94c0",
+    "pilot20-v8-matched-nonthinking-teaching.json": "5b8d1e6915833b30fa42c765ac4e5e82d02ff013303de0ccba590362faff97d4"
+  },
+  "full_context_review_file": "paired-teaching-review.txt",
+  "summary": {
+    "baseline": {
+      "label": "base-v8-matched-nonthinking",
+      "all": {
+        "fail": 15,
+        "partial": 4,
+        "pass": 17
+      },
+      "by_mode": {
+        "correct-step": {
+          "fail": 4,
+          "pass": 8
+        },
+        "wrong-step": {
+          "partial": 4,
+          "fail": 7,
+          "pass": 1
+        },
+        "stuck": {
+          "fail": 4,
+          "pass": 8
+        }
+      }
+    },
+    "pilot": {
+      "label": "pilot20-v8-matched-nonthinking",
+      "all": {
+        "fail": 11,
+        "partial": 4,
+        "pass": 21
+      },
+      "by_mode": {
+        "correct-step": {
+          "fail": 3,
+          "pass": 9
+        },
+        "wrong-step": {
+          "partial": 4,
+          "fail": 7,
+          "pass": 1
+        },
+        "stuck": {
+          "fail": 1,
+          "pass": 11
+        }
+      }
+    }
+  },
+  "improved_ids": [
+    "fresh-lcm-stuck",
+    "fresh-roots-stuck",
+    "fresh-comparison-stuck",
+    "fresh-median-correct-step"
+  ],
+  "regressed_ids": [],
+  "promotion_recommendation": "Do not promote. Useful completion gains coexist with repeated false acceptance of incorrect learner steps.",
+  "limitations": [
+    "One Codex manual reviewer; no teacher, child, blind, independent human, or inter-rater assessment.",
+    "Frozen 36 development probes: 12 problems with three states each. Baseline and pilot share frozen prior assistant context; these are not adaptive conversations using each model\u2019s own replies.",
+    "Both Colab BF16 models used greedy nonthinking generation with a 512-token output limit and the same tutor prompt. Results are not directly comparable to earlier thinking tests at 1536 tokens, local Q4 inference, or app guides.",
+    "Length-truncated replies fail the completion gate even if a correct final value appears earlier. The output limit was not changed after observing results.",
+    "Partial means no decisive false maths or verdict, but incomplete diagnosis or weak guidance. Unqualified praise of an incorrect step fails even when its value is silently repaired.",
+    "Accurate connected alternative steps are accepted; exact frozen rubric wording is not required.",
+    "These probes do not establish that repeated hints change usefully. Explicit second-hint and long-history stuck conversations still require separate testing.",
+    "No claim of complete grade 7 coverage, other school subjects, reliable tutoring, 8 GB Linux or Raspberry Pi suitability, or deployment readiness."
+  ],
+  "results": [
+    {
+      "id": "fresh-fractions-correct-step",
+      "domain": "fractions",
+      "mode": "correct-step",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "Does not confirm correct numerator20; reverts to denominator factor already established.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "a2b1e4a5ab2fae19702d6c6e924384a757e9515b120c7d4146ac9cec8d525995",
+      "pilot_reply_sha256": "a2b1e4a5ab2fae19702d6c6e924384a757e9515b120c7d4146ac9cec8d525995"
+    },
+    {
+      "id": "fresh-fractions-wrong-step",
+      "domain": "fractions",
+      "mode": "wrong-step",
+      "baseline": "partial",
+      "pilot": "partial",
+      "observation": "Useful equivalent-fraction factor check but ambiguous praise of18 and no explicit wrong-value correction.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "903015540b6c8fb86e60de5ff6f7ef5d182aa98457f3ee3c00f64dcabd15a87a",
+      "pilot_reply_sha256": "903015540b6c8fb86e60de5ff6f7ef5d182aa98457f3ee3c00f64dcabd15a87a"
+    },
+    {
+      "id": "fresh-fractions-stuck",
+      "domain": "fractions",
+      "mode": "stuck",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "All substantive fraction arithmetic correct and11/24 appears, but512-token limit cuts final displayed equation mid-expression. Incomplete child response fails completion gate.",
+      "baseline_finish": "length",
+      "pilot_finish": "length",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "59f72070062e2151b12ddf670387c280f96b648e3da1196ad6edc6f7f48690d7",
+      "pilot_reply_sha256": "77c2605beff197488b2706b716fefd785fe2751abd579524be3acd3b0e06e45c"
+    },
+    {
+      "id": "fresh-division-correct-step",
+      "domain": "division",
+      "mode": "correct-step",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Confirms3 groups, asks3\u00d721 as connected product before subtraction.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "d958d0c275432164c2029ceb38012cbb424974f53e35013d540bcba4144545b8",
+      "pilot_reply_sha256": "d958d0c275432164c2029ceb38012cbb424974f53e35013d540bcba4144545b8"
+    },
+    {
+      "id": "fresh-division-wrong-step",
+      "domain": "division",
+      "mode": "wrong-step",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "Falsely accepts2 and switches to2 goes into7, losing actual21-into73 stage.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "87fa74301a70b1eaa9d2beb792b5d498d652c78216988d5b36c7fbd8ddc85197",
+      "pilot_reply_sha256": "87fa74301a70b1eaa9d2beb792b5d498d652c78216988d5b36c7fbd8ddc85197"
+    },
+    {
+      "id": "fresh-division-stuck",
+      "domain": "division",
+      "mode": "stuck",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Complete accurate long division:73\u221263=10;bring down5;105/21=5;35 counters.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "b9a95796142c1289cf5114fd3a0056cef105ecdb53ef6ce66153a6a0b47c9221",
+      "pilot_reply_sha256": "854bda8848ebba18f06433e17f520bef64360abdfc924df908e4904cf4e9f539"
+    },
+    {
+      "id": "fresh-mixed-correct-step",
+      "domain": "mixed",
+      "mode": "correct-step",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Confirms24 and asks24/2 without whole-answer leakage.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "6a53d6dd0404bdf1afa52b575c54c7e9f72fa0b6b97e12ef04ea9414dfef502a",
+      "pilot_reply_sha256": "6a53d6dd0404bdf1afa52b575c54c7e9f72fa0b6b97e12ef04ea9414dfef502a"
+    },
+    {
+      "id": "fresh-mixed-wrong-step",
+      "domain": "mixed",
+      "mode": "wrong-step",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "Base falsely accepts22 and carries it onward. Pilot falsely says correct while silently replacing22 with24; no error diagnosis or useful corrective hint.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "dd151ed79f1f0862afa37128e6d1b24aa00d6a7cf2b120b5b7a23bb14ab2819e",
+      "pilot_reply_sha256": "af639a114affd317ad81afa2879378d164031ffbb2f3e787e37ead474a996e4f"
+    },
+    {
+      "id": "fresh-mixed-stuck",
+      "domain": "mixed",
+      "mode": "stuck",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Complete accurate ordered operations24,12,16,4.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "7853860f8e9b8d259dad87cc4389a3ad3caa75734e9c9e403b4aa22493a17dbb",
+      "pilot_reply_sha256": "6bbc66d2dbf2c463cb79345953d448a3e6f39c010b523d126a2301ddd9299b78"
+    },
+    {
+      "id": "fresh-word-correct-step",
+      "domain": "word",
+      "mode": "correct-step",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Confirms102 then connects removed8 to subtraction; unnecessary Is that correct does not invalidate useful progression.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "d23a3b489f50f5b266ee4fecbc3af43c088603b10d799684246d9fc4346af020",
+      "pilot_reply_sha256": "d23a3b489f50f5b266ee4fecbc3af43c088603b10d799684246d9fc4346af020"
+    },
+    {
+      "id": "fresh-word-wrong-step",
+      "domain": "word",
+      "mode": "wrong-step",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "Falsely confirms17\u00d76=92 and carries incorrect total forward.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "f30313c3705bcef7c6547159b21c23440cb17e75c6134ed561340b701c14b02e",
+      "pilot_reply_sha256": "f30313c3705bcef7c6547159b21c23440cb17e75c6134ed561340b701c14b02e"
+    },
+    {
+      "id": "fresh-word-stuck",
+      "domain": "word",
+      "mode": "stuck",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Complete accurate17\u00d76=102 then102\u22128=94 marbles.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "e712933d0990618cd3f9f1bc6304791ed36e9de956dc1d5241d20a15e77becc6",
+      "pilot_reply_sha256": "abe1adaaede0829db9956947a242695ded9e45d55910d826bc739808d72b17ef"
+    },
+    {
+      "id": "fresh-lcm-correct-step",
+      "domain": "lcm",
+      "mode": "correct-step",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Correctly confirms completed90 and gives valid prime-factorization check. Overlong but accurate.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "287697a8da9236c91b0156d84b0dd912f56ec7aa634283ec35dafb9d2f82ab91",
+      "pilot_reply_sha256": "287697a8da9236c91b0156d84b0dd912f56ec7aa634283ec35dafb9d2f82ab91"
+    },
+    {
+      "id": "fresh-lcm-wrong-step",
+      "domain": "lcm",
+      "mode": "wrong-step",
+      "baseline": "partial",
+      "pilot": "partial",
+      "observation": "Correctly proposes divisibility check for60 but asks two divisions rather than clearly identifying60 not divisible by18 and one small next step.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "c3d4d51270bc4fad4e5659df6174a73762774189027bb81d3cda22b22aac7d02",
+      "pilot_reply_sha256": "c3d4d51270bc4fad4e5659df6174a73762774189027bb81d3cda22b22aac7d02"
+    },
+    {
+      "id": "fresh-lcm-stuck",
+      "domain": "lcm",
+      "mode": "stuck",
+      "baseline": "fail",
+      "pilot": "pass",
+      "observation": "Base512-token truncation despite correctLCM90 computation. Pilot completes accurate ordered-multiple solution and explicit90.",
+      "baseline_finish": "length",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "5bc90ebbace6bc875039bf35fe7e639f398ec44c8b77a3271c4df4f69cd18f90",
+      "pilot_reply_sha256": "de7e6c0afacc0e8988984d750b0a4d88c3a02bf25acd8355d56f1f3299daf2f6"
+    },
+    {
+      "id": "fresh-roots-correct-step",
+      "domain": "roots",
+      "mode": "correct-step",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "Fails to recognize196 as correct14\u00d714; restarts10\u00d710 instead of connecting square root14.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "8acc88907a8cb9e9bdd6ebb613912d16751f9d86fc0a9680d77fa51a7bdd00d5",
+      "pilot_reply_sha256": "8acc88907a8cb9e9bdd6ebb613912d16751f9d86fc0a9680d77fa51a7bdd00d5"
+    },
+    {
+      "id": "fresh-roots-wrong-step",
+      "domain": "roots",
+      "mode": "wrong-step",
+      "baseline": "partial",
+      "pilot": "partial",
+      "observation": "Corrects14\u00d714 to196, but then unrelated10\u00d710 restarts root search instead of helping calculate14\u00d714.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "a8a156fa2f470d4afe10d826d1a80b5dd78272b9d50cad09df832912669d2169",
+      "pilot_reply_sha256": "a8a156fa2f470d4afe10d826d1a80b5dd78272b9d50cad09df832912669d2169"
+    },
+    {
+      "id": "fresh-roots-stuck",
+      "domain": "roots",
+      "mode": "stuck",
+      "baseline": "fail",
+      "pilot": "pass",
+      "observation": "Base promises full solution but stops at asking14\u00d714;pilot completes14\u00d714=196 and positive root14.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "a754ef6900f138a7aacd7561548e05bc8228f82bb7392118eb93bde90546b6b0",
+      "pilot_reply_sha256": "dbecd3eac094fafe4b768077842acfb493962daf811e6bc05c62272c15a59a1e"
+    },
+    {
+      "id": "fresh-comparison-correct-step",
+      "domain": "comparison",
+      "mode": "correct-step",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "Does not confirm\u22129/12 closer to zero; reasks an equivalent denominator conversion already given.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "d57c826598c86e379dbf0f9fbf39853063936f4fde0debd43e8b87ab038d2407",
+      "pilot_reply_sha256": "d57c826598c86e379dbf0f9fbf39853063936f4fde0debd43e8b87ab038d2407"
+    },
+    {
+      "id": "fresh-comparison-wrong-step",
+      "domain": "comparison",
+      "mode": "wrong-step",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "Does not correct\u221210/12 as chosen closer-to-zero fraction; repeats already-completed denominator conversion.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "1173f992176ca14c80a6c82ca197c6599a6e8210f985949fc29feb4d4d118420",
+      "pilot_reply_sha256": "1173f992176ca14c80a6c82ca197c6599a6e8210f985949fc29feb4d4d118420"
+    },
+    {
+      "id": "fresh-comparison-stuck",
+      "domain": "comparison",
+      "mode": "stuck",
+      "baseline": "fail",
+      "pilot": "pass",
+      "observation": "Base confusing smaller-number opening and512-token truncation;pilot completes correct common-denominator comparison\u22123/4>\u22125/6.",
+      "baseline_finish": "length",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "06e427f3171b8896b166a82040b5a5f45ca3e7707458b25ab9f5f13112a59351",
+      "pilot_reply_sha256": "22e62a36308013852765f11d3387a2bdb67ee7858e7185e9093901351e1e8ab7"
+    },
+    {
+      "id": "fresh-patterns-correct-step",
+      "domain": "patterns",
+      "mode": "correct-step",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Confirms4 and checks difference in next pair before extending rule. Valid connected alternative to immediately adding4 to17.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "88bb09420525b7f74bdfd1bcc25aabe2b377f296c7d5382f884d330350181062",
+      "pilot_reply_sha256": "88bb09420525b7f74bdfd1bcc25aabe2b377f296c7d5382f884d330350181062"
+    },
+    {
+      "id": "fresh-patterns-wrong-step",
+      "domain": "patterns",
+      "mode": "wrong-step",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "Falsely confirms9\u22125=3.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "3fcaac2e32b9a28de8691ea1763efa9858fee24cc5e9ee14f798763ea3f1f25d",
+      "pilot_reply_sha256": "e0c198dd35244581e940c6ffdc8f46449e8e7492158ebc5c5eab62db7811da11"
+    },
+    {
+      "id": "fresh-patterns-stuck",
+      "domain": "patterns",
+      "mode": "stuck",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Checks all successive differences4 and computes17+4=21.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "d0a348f677de07583ef0f206928cfb4425881b2f59a17c422460b4eb11213782",
+      "pilot_reply_sha256": "93db00e899c03301f10a9344be2b16ad783d47d3ec6579bf5cd42bb991c83e88"
+    },
+    {
+      "id": "fresh-substitution-correct-step",
+      "domain": "substitution",
+      "mode": "correct-step",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Confirms12 and asks12+7.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "fa79ddda6193bdfe09c6c0bb5944dd878a99de1130fbccdc6cebdd981b44a21b",
+      "pilot_reply_sha256": "fa79ddda6193bdfe09c6c0bb5944dd878a99de1130fbccdc6cebdd981b44a21b"
+    },
+    {
+      "id": "fresh-substitution-wrong-step",
+      "domain": "substitution",
+      "mode": "wrong-step",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "Falsely confirms2\u00d76=14 and propagates14+7.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "c20fced22708116e68e444b3f04a39c4b5e356cf58bb2d62522218d62235f820",
+      "pilot_reply_sha256": "b28b6778b8d0110065ee31ff668c154bd92f4d86a17590aa55eb0e94818adbe2"
+    },
+    {
+      "id": "fresh-substitution-stuck",
+      "domain": "substitution",
+      "mode": "stuck",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Complete accurate substitution2\u00d76+7=12+7=19.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "c01ff715f57c611c34b0f6de9ca0d80ee60ed4c7e0ff73bcfa853681044b9361",
+      "pilot_reply_sha256": "c01ff715f57c611c34b0f6de9ca0d80ee60ed4c7e0ff73bcfa853681044b9361"
+    },
+    {
+      "id": "fresh-capacity-correct-step",
+      "domain": "capacity",
+      "mode": "correct-step",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Confirms2350mL and identifies adding450mL next.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "874ec85060cecae474cb6cf0d8fb87c3773c8199637424629b9017b4ed26f57c",
+      "pilot_reply_sha256": "6ecdac9ca2607250a97483ef6283de4444e1302e508a0889c70af7a137bc8f72"
+    },
+    {
+      "id": "fresh-capacity-wrong-step",
+      "domain": "capacity",
+      "mode": "wrong-step",
+      "baseline": "fail",
+      "pilot": "fail",
+      "observation": "Falsely confirms2.35L=235mL then moves toaddition.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "f91703b3d6781f59aac64806e1df5d055fa05d4765c1e8336b667e5146cf3266",
+      "pilot_reply_sha256": "f91703b3d6781f59aac64806e1df5d055fa05d4765c1e8336b667e5146cf3266"
+    },
+    {
+      "id": "fresh-capacity-stuck",
+      "domain": "capacity",
+      "mode": "stuck",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Complete accurate conversion2350mL plus450mL=2800mL.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "d360e6ce96223d2c4c0d47783b1898fb6b3302a5920a9454c27ee6e1190a85a3",
+      "pilot_reply_sha256": "180cc77a7729a817df6f7305952280339d01d549ee9e5c1eab0bcf90a9e7125e"
+    },
+    {
+      "id": "fresh-median-correct-step",
+      "domain": "median",
+      "mode": "correct-step",
+      "baseline": "fail",
+      "pilot": "pass",
+      "observation": "Base repeats sorting already-sorted list and does not advance;pilot confirms two middle numbers and asks average4and9.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "671af544b2a3e5f8b6d64bd4dfe220b6c7727b94eb45722a84d96dc144a161bd",
+      "pilot_reply_sha256": "f10ab2af5e7cc836a593e94e427cbec1059c29c34c70d4cf6c06ed81b53feb82"
+    },
+    {
+      "id": "fresh-median-wrong-step",
+      "domain": "median",
+      "mode": "wrong-step",
+      "baseline": "partial",
+      "pilot": "partial",
+      "observation": "No false arithmetic, but asks to sort already-sorted list without pointing to third/fourth positions or correcting11.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "b54b4fdbfd8544bcb371b77b4754a4167db75c67e755fe54ffb27b3fe0467710",
+      "pilot_reply_sha256": "b54b4fdbfd8544bcb371b77b4754a4167db75c67e755fe54ffb27b3fe0467710"
+    },
+    {
+      "id": "fresh-median-stuck",
+      "domain": "median",
+      "mode": "stuck",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Complete accurate two middle entries4and9,average13/2=6.5.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "6da4ed2eab76fa8a3a224ee220a06b092675139255527debe52661b85079256f",
+      "pilot_reply_sha256": "5fba0855056aaf881830c7911e71fe496e295104923f13b82220a42b744a8ac3"
+    },
+    {
+      "id": "fresh-angles-correct-step",
+      "domain": "angles",
+      "mode": "correct-step",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Confirms subtraction180\u221263 and asks learner to evaluate it without leaking117.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "7e61cd4f6b891531fd74aabf45acbf4004fe9495d600d76ed6d9a4800f7a9295",
+      "pilot_reply_sha256": "7e61cd4f6b891531fd74aabf45acbf4004fe9495d600d76ed6d9a4800f7a9295"
+    },
+    {
+      "id": "fresh-angles-wrong-step",
+      "domain": "angles",
+      "mode": "wrong-step",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Correctly explains whole-minus-known-part and redirects addition to subtraction; no117 leakage.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": true,
+      "baseline_reply_sha256": "1fa567f653a3f449d7d352cd7eaf71cd397336eb0920048d003224ce904c48cd",
+      "pilot_reply_sha256": "1fa567f653a3f449d7d352cd7eaf71cd397336eb0920048d003224ce904c48cd"
+    },
+    {
+      "id": "fresh-angles-stuck",
+      "domain": "angles",
+      "mode": "stuck",
+      "baseline": "pass",
+      "pilot": "pass",
+      "observation": "Complete accurate straight-line equation and180\u221263=117degrees.",
+      "baseline_finish": "stop",
+      "pilot_finish": "stop",
+      "identical_child_reply": false,
+      "baseline_reply_sha256": "cdf22b57051b9967ab2819c08e87453ea10ac4d0b246a22969a7fecb7885b7e1",
+      "pilot_reply_sha256": "fa10b0b369c5edd1d20fd513a85ea9c4ec99ceb4ad2b61fd1786611197f8a1c0"
+    }
+  ]
+}

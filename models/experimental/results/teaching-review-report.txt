@@ -1,0 +1,26 @@
+V8 response-only pilot: independent review
+
+All 36 paired teaching conversations were reviewed in full.
+Baseline: 17 pass, 4 partial, 15 fail.
+Pilot: 21 pass, 4 partial, 11 fail.
+
+Four cases improve, with no grade regressions. Full worked completion improves from 8/12 to 11/12: LCM, square root, and negative fraction comparison now finish correctly. Correct-step progression improves from 8/12 to 9/12 because the median response advances to averaging the middle pair. The fraction solution still hits the 512-token output limit.
+
+Wrong-step tutoring remains weak: only 1/12 passes for either model. The model falsely accepts incorrect division, multiplication, pattern, substitution, and volume-conversion answers. The pilot silently repairs 22 to 24 while still saying the learner is correct. Do not promote this adapter yet.
+
+Separate numeric scores: 117 -> 118/127 on the old development retention suite; 15 -> 15/20 on fresh problems. The old suite overlaps development or validation questions and is not evidence of blind mastery.
+
+Training completed 20 steps and 640 example presentations in 93.4593 seconds. Correct throughput: 6.848 examples/second and 0.214 optimizer steps/second. Trainer’s reported rates use the full configured schedule and overstate actual work.
+
+Training-only GPU samples, excluding the step 20 boundary: mean 88.77%, median 100%. After step 5: mean 98.93%, median 100%, across 28 samples. Peak observed VRAM usage was 59.07%; this is separate from compute utilization. Host RAM was not measured here.
+
+Limitations
+
+- One Codex manual reviewer; no teacher, child, blind, independent human, or inter-rater assessment.
+- Frozen 36 development probes: 12 problems with three states each. Baseline and pilot share frozen prior assistant context; these are not adaptive conversations using each model’s own replies.
+- Both Colab BF16 models used greedy nonthinking generation with a 512-token output limit and the same tutor prompt. Results are not directly comparable to earlier thinking tests at 1536 tokens, local Q4 inference, or app guides.
+- Length-truncated replies fail the completion gate even if a correct final value appears earlier. The output limit was not changed after observing results.
+- Partial means no decisive false maths or verdict, but incomplete diagnosis or weak guidance. Unqualified praise of an incorrect step fails even when its value is silently repaired.
+- Accurate connected alternative steps are accepted; exact frozen rubric wording is not required.
+- These probes do not establish that repeated hints change usefully. Explicit second-hint and long-history stuck conversations still require separate testing.
+- No claim of complete grade 7 coverage, other school subjects, reliable tutoring, 8 GB Linux or Raspberry Pi suitability, or deployment readiness.

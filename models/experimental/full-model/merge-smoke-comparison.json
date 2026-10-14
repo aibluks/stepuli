@@ -1,0 +1,44 @@
+{
+  "pairs": [
+    {
+      "id": "mixed-user-required",
+      "identical_reply": true,
+      "same_finish": true
+    },
+    {
+      "id": "fraction-subtraction",
+      "identical_reply": true,
+      "same_finish": true
+    },
+    {
+      "id": "division",
+      "identical_reply": true,
+      "same_finish": true
+    },
+    {
+      "id": "fresh-mixed-correct-step",
+      "identical_reply": true,
+      "same_finish": true
+    },
+    {
+      "id": "fresh-mixed-wrong-step",
+      "identical_reply": true,
+      "same_finish": true
+    },
+    {
+      "id": "fresh-capacity-wrong-step",
+      "identical_reply": false,
+      "same_finish": true
+    },
+    {
+      "id": "fresh-roots-stuck",
+      "identical_reply": true,
+      "same_finish": true
+    }
+  ],
+  "all_replies_identical": false,
+  "notes": [
+    "Smallgreedy smoke test only; no global numerical or behavioral equivalence claim.",
+    "Both transient8082servers stopped; existing8080/8081servers andapp untouched."
+  ]
+}

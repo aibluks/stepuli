@@ -1,0 +1,14 @@
+{
+  "label": "pilot20-v8-matched-nonthinking",
+  "base": "unsloth/gemma-4-E2B-it",
+  "base_revision": "d36bdd3855c82a6a1a23f7c459b749f5724ae75d",
+  "thinking": false,
+  "temperature": 0,
+  "max_new_tokens": 512,
+  "context_limit": 4096,
+  "teaching_count": 36,
+  "maths_regression_count": 127,
+  "fresh_maths_count": 20,
+  "system_sha256": "f44bcb10d701f7a19a0b0c78a6f99e5b9031eee720d54fae16131f91f9c2461a",
+  "numeric_suite_limit": "Old127 is a development retention suite;25questions appear in validation. Fresh20 exact roots excluded from current train/val."
+}

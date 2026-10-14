@@ -1,0 +1,454 @@
+{
+  "settings": {
+    "model": "stepuli-v8-experimental-q4",
+    "temperature": 0,
+    "max_tokens": 512,
+    "thinking": false,
+    "context": 4096,
+    "probes_sha256": "47642c6a82409157ec5e11425b02394f1fe0ea6f6c801bb5abbadd840955a003",
+    "q4_sha256": "00ab71619a71fad1260eb3ea5ce6071e4a4face0a2b36a4a7b0a918f0690626b",
+    "precision_note": "Only140 adapted F16 tensors quantized under Q4_K_M policy. All461 unadapted tensors preserved byte-for-byte via explicit type overrides. Derived from an already Q4-quantized base, not a merge into originalBF16 weights."
+  },
+  "results": [
+    {
+      "topic": "addition",
+      "question": "411 + 93",
+      "answer": "504",
+      "expression": "411 + 93",
+      "kind": "numeric",
+      "actual": "504",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.18920941604301333,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 49,
+        "total_tokens": 53,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "request_sha256": "9cbeda0e1945db7b65bd88c96ae99000b851844e87d0a69e07a26063aa4602e9",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "addition",
+      "question": "424 + 50",
+      "answer": "474",
+      "expression": "424 + 50",
+      "kind": "numeric",
+      "actual": "474",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.12459679204039276,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 49,
+        "total_tokens": 53,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "a460d9813d445813eebef26886f4031e51c1b689b59754f76a729a551aca6ad6",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "subtraction",
+      "question": "203 - 48",
+      "answer": "155",
+      "expression": "203 - 48",
+      "kind": "numeric",
+      "actual": "155",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.1237790830200538,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 49,
+        "total_tokens": 53,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "3bf34f702dd187a18426d4451a572c2429ab4a7644715c00267fe4bdc95795a9",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "subtraction",
+      "question": "-19 - 18",
+      "answer": "-37",
+      "expression": "-19 - 18",
+      "kind": "numeric",
+      "actual": "-37",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.12652449996676296,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 49,
+        "total_tokens": 53,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "18815223e52d79fcdb6641fe9a75c3daf33a310d3dd4967cf78455c6dc2ca581",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "multiplication",
+      "question": "17 * 12",
+      "answer": "204",
+      "expression": "17 * 12",
+      "kind": "numeric",
+      "actual": "204",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.12754341610707343,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 48,
+        "total_tokens": 52,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "33ce37ed8d58b7a0a37a35917858c5b2d85d69b152bded75fb4118d99c99e66e",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "multiplication",
+      "question": "-32 * 12",
+      "answer": "-384",
+      "expression": "-32 * 12",
+      "kind": "numeric",
+      "actual": "-384",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.14357904205098748,
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 49,
+        "total_tokens": 54,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "a93754f9046a05db0a732dcf26b8039c29762c8ca8ae692fff4ed043367cc979",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "division",
+      "question": "407 / 11",
+      "answer": "37",
+      "expression": "407 / 11",
+      "kind": "numeric",
+      "actual": "37",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.11364933394361287,
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 49,
+        "total_tokens": 52,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "959c27980ba5c48d95d956eb8fcd41a0ed98155bba2c17efc733e600d3d7056a",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "division",
+      "question": "559 / 13",
+      "answer": "43",
+      "expression": "559 / 13",
+      "kind": "numeric",
+      "actual": "43",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.11478195898234844,
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 49,
+        "total_tokens": 52,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "08fad8fdfeff493e7d5398a6ff3a471540f6c20dfb399ba4c181659b98183758",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "fraction_add",
+      "question": "(7/3) + (3/9)",
+      "answer": "8/3",
+      "expression": "(7/3) + (3/9)",
+      "kind": "numeric",
+      "actual": "11/9",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.15094366599805653,
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 53,
+        "total_tokens": 58,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "01232e8585eeaaf20e213c8a8698b0e13af60fbdaabe50f5f6cd574a283b2be8",
+      "correct": false,
+      "reason": "wrong_value"
+    },
+    {
+      "topic": "fraction_add",
+      "question": "(7/12) + (4/12)",
+      "answer": "11/12",
+      "expression": "(7/12) + (4/12)",
+      "kind": "numeric",
+      "actual": "11/12",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.20770829205866903,
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 55,
+        "total_tokens": 61,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "59b9b4c0120b80b2636de5172a05e819bafbe8bf004418b263e98f184ad6e2e9",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "fraction_sub",
+      "question": "(9/6) - (1/7)",
+      "answer": "19/14",
+      "expression": "(9/6) - (1/7)",
+      "kind": "numeric",
+      "actual": "13/42",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.17087770788930357,
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 53,
+        "total_tokens": 59,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "d0be42792573c7f2873099ae493c665f39e3e7973f5d3725f489152e582b75e4",
+      "correct": false,
+      "reason": "wrong_value"
+    },
+    {
+      "topic": "fraction_sub",
+      "question": "(9/3) - (5/4)",
+      "answer": "7/4",
+      "expression": "(9/3) - (5/4)",
+      "kind": "numeric",
+      "actual": "1/4",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.13532920798752457,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 53,
+        "total_tokens": 57,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "668b3f30ac2a8bfe10e30a7e773fc19e74337efaec2b966ab58766fa04a970b7",
+      "correct": false,
+      "reason": "wrong_value"
+    },
+    {
+      "topic": "fraction_mul",
+      "question": "(5/11) * (1/9)",
+      "answer": "5/99",
+      "expression": "(5/11) * (1/9)",
+      "kind": "numeric",
+      "actual": "5/99",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.15531070798169822,
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 54,
+        "total_tokens": 59,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "e8aa99cbb5aac384bc2a34674f1be28e6202e50f649cce72b21c0772061327c2",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "fraction_mul",
+      "question": "(3/12) * (1/10)",
+      "answer": "1/40",
+      "expression": "(3/12) * (1/10)",
+      "kind": "numeric",
+      "actual": "1/40",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.18943004205357283,
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 55,
+        "total_tokens": 60,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "30a50f1eb4497da971a1f65537373c3634d366fcbf90c7f9a46bddfd04d5881b",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "fraction_div",
+      "question": "(3/7) / (9/5)",
+      "answer": "5/21",
+      "expression": "(3/7) / (9/5)",
+      "kind": "numeric",
+      "actual": "5/7",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.13910329202190042,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 53,
+        "total_tokens": 57,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "b647c8d086e84eeed03464d0c23cc8f24f089bcde649eb55cfe22307fe158883",
+      "correct": false,
+      "reason": "wrong_value"
+    },
+    {
+      "topic": "fraction_div",
+      "question": "(2/12) / (3/12)",
+      "answer": "2/3",
+      "expression": "(2/12) / (3/12)",
+      "kind": "numeric",
+      "actual": "2/3",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.21983008401002735,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 55,
+        "total_tokens": 59,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "b56c16cc9ea3bf76fc68e2585440cae0558a7e60ff87b8e9de48c39d81a49b8d",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "decimals",
+      "question": "5.57 + 3.18",
+      "answer": "35/4",
+      "expression": "5.57 + 3.18",
+      "kind": "numeric",
+      "actual": "8.75",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.16555400006473064,
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 52,
+        "total_tokens": 57,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "72a477dcb248990ff94dc462fbbbd3d4a97cbceb933b9fac385a4b4301fc51fe",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "decimals",
+      "question": "8.71 - 3.18",
+      "answer": "553/100",
+      "expression": "8.71 - 3.18",
+      "kind": "numeric",
+      "actual": "5.53",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.16821749997325242,
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 52,
+        "total_tokens": 57,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "00fa86658b8da3e825d46a6619de150bfd984181eb35a6610ea96716390d54a8",
+      "correct": true,
+      "reason": "correct"
+    },
+    {
+      "topic": "mixed_order",
+      "question": "4 + 12 - 9 * 7 / 6",
+      "answer": "11/2",
+      "expression": "4 + 12 - 9 * 7 / 6",
+      "kind": "numeric",
+      "actual": "-11",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.18462204094976187,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 56,
+        "total_tokens": 60,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "77e8a15b0d3a3f0aa3dc37f6730d1e5489c24e55b383af25721df2a10f1bbca8",
+      "correct": false,
+      "reason": "wrong_value"
+    },
+    {
+      "topic": "mixed_order",
+      "question": "(8 - 3) * 12 + 2 / 6",
+      "answer": "181/3",
+      "expression": "(8 - 3) * 12 + 2 / 6",
+      "kind": "numeric",
+      "actual": "29",
+      "reasoning": null,
+      "finishReason": "stop",
+      "seconds": 0.164744499954395,
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 58,
+        "total_tokens": 61,
+        "prompt_tokens_details": {
+          "cached_tokens": 33
+        }
+      },
+      "request_sha256": "66b83db3b5dd70b5aceefc45ce197d477af025dcfad785d9981a93337f5fd835",
+      "correct": false,
+      "reason": "wrong_value"
+    }
+  ]
+}

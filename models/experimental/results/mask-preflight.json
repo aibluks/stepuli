@@ -1,0 +1,12 @@
+{
+  "train": {
+    "rows": 3760,
+    "target_tokens": 201626,
+    "all_final_replies_preserved": true
+  },
+  "validation": {
+    "rows": 940,
+    "target_tokens": 48895,
+    "all_final_replies_preserved": true
+  }
+}

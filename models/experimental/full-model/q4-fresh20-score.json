@@ -1,0 +1,176 @@
+{
+  "source_file": "q4-fresh20-results.json",
+  "source_sha256": "c45da1916c90479df983b911af143b0249fc1545f5242fa8eb91c4773cf2a041",
+  "probes_file": "fresh-maths20.json",
+  "probes_sha256": "47642c6a82409157ec5e11425b02394f1fe0ea6f6c801bb5abbadd840955a003",
+  "count": 20,
+  "correct": 14,
+  "failed": 6,
+  "reason_counts": {
+    "correct": 14,
+    "wrong_value": 6
+  },
+  "format_review_ids": [],
+  "results": [
+    {
+      "id": "item-001",
+      "question": "411 + 93",
+      "expected": "504",
+      "correct": true,
+      "reason": "correct",
+      "actual": "504"
+    },
+    {
+      "id": "item-002",
+      "question": "424 + 50",
+      "expected": "474",
+      "correct": true,
+      "reason": "correct",
+      "actual": "474"
+    },
+    {
+      "id": "item-003",
+      "question": "203 - 48",
+      "expected": "155",
+      "correct": true,
+      "reason": "correct",
+      "actual": "155"
+    },
+    {
+      "id": "item-004",
+      "question": "-19 - 18",
+      "expected": "-37",
+      "correct": true,
+      "reason": "correct",
+      "actual": "-37"
+    },
+    {
+      "id": "item-005",
+      "question": "17 * 12",
+      "expected": "204",
+      "correct": true,
+      "reason": "correct",
+      "actual": "204"
+    },
+    {
+      "id": "item-006",
+      "question": "-32 * 12",
+      "expected": "-384",
+      "correct": true,
+      "reason": "correct",
+      "actual": "-384"
+    },
+    {
+      "id": "item-007",
+      "question": "407 / 11",
+      "expected": "37",
+      "correct": true,
+      "reason": "correct",
+      "actual": "37"
+    },
+    {
+      "id": "item-008",
+      "question": "559 / 13",
+      "expected": "43",
+      "correct": true,
+      "reason": "correct",
+      "actual": "43"
+    },
+    {
+      "id": "item-009",
+      "question": "(7/3) + (3/9)",
+      "expected": "8/3",
+      "correct": false,
+      "reason": "wrong_value",
+      "actual": "11/9"
+    },
+    {
+      "id": "item-010",
+      "question": "(7/12) + (4/12)",
+      "expected": "11/12",
+      "correct": true,
+      "reason": "correct",
+      "actual": "11/12"
+    },
+    {
+      "id": "item-011",
+      "question": "(9/6) - (1/7)",
+      "expected": "19/14",
+      "correct": false,
+      "reason": "wrong_value",
+      "actual": "13/42"
+    },
+    {
+      "id": "item-012",
+      "question": "(9/3) - (5/4)",
+      "expected": "7/4",
+      "correct": false,
+      "reason": "wrong_value",
+      "actual": "1/4"
+    },
+    {
+      "id": "item-013",
+      "question": "(5/11) * (1/9)",
+      "expected": "5/99",
+      "correct": true,
+      "reason": "correct",
+      "actual": "5/99"
+    },
+    {
+      "id": "item-014",
+      "question": "(3/12) * (1/10)",
+      "expected": "1/40",
+      "correct": true,
+      "reason": "correct",
+      "actual": "1/40"
+    },
+    {
+      "id": "item-015",
+      "question": "(3/7) / (9/5)",
+      "expected": "5/21",
+      "correct": false,
+      "reason": "wrong_value",
+      "actual": "5/7"
+    },
+    {
+      "id": "item-016",
+      "question": "(2/12) / (3/12)",
+      "expected": "2/3",
+      "correct": true,
+      "reason": "correct",
+      "actual": "2/3"
+    },
+    {
+      "id": "item-017",
+      "question": "5.57 + 3.18",
+      "expected": "35/4",
+      "correct": true,
+      "reason": "correct",
+      "actual": "8.75"
+    },
+    {
+      "id": "item-018",
+      "question": "8.71 - 3.18",
+      "expected": "553/100",
+      "correct": true,
+      "reason": "correct",
+      "actual": "5.53"
+    },
+    {
+      "id": "item-019",
+      "question": "4 + 12 - 9 * 7 / 6",
+      "expected": "11/2",
+      "correct": false,
+      "reason": "wrong_value",
+      "actual": "-11"
+    },
+    {
+      "id": "item-020",
+      "question": "(8 - 3) * 12 + 2 / 6",
+      "expected": "181/3",
+      "correct": false,
+      "reason": "wrong_value",
+      "actual": "29"
+    }
+  ]
+}

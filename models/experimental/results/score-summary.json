@@ -1,0 +1,2449 @@
+{
+  "scorer_sha256": "3bc4da5dbc8ab9a7148edf5247782b77f04138efd46e1b84c4622600306c25d2",
+  "rule": "Exact whole-reply Fraction/Decimal equivalence; invalid formats remain failures pending separate manual review; no working/answer extraction.",
+  "numeric": {
+    "old127": {
+      "baseline": {
+        "source_file": "outputs/training/v8-response-pilot/completed-export/base-v8-matched-nonthinking-maths.json",
+        "source_sha256": "d25ef526e585a54689a2e725b6fd6e2058a58198a70f87f09607b3f4d33fdff4",
+        "probes_file": "outputs/training/v8-response-pilot/completed-export/math-probes.json",
+        "probes_sha256": "a93fd2f021192416ac660e0ca5c33ab92021463a433fcc3c2b0ebc9a901f9943",
+        "count": 127,
+        "correct": 117,
+        "failed": 10,
+        "reason_counts": {
+          "correct": 117,
+          "wrong_value": 9,
+          "unparseable_format": 1
+        },
+        "format_review_ids": [
+          "item-105"
+        ],
+        "results": [
+          {
+            "id": "item-001",
+            "question": "2 + 2",
+            "expected": "4",
+            "correct": true,
+            "reason": "correct",
+            "actual": "4"
+          },
+          {
+            "id": "item-002",
+            "question": "14 + 9",
+            "expected": "23",
+            "correct": true,
+            "reason": "correct",
+            "actual": "23"
+          },
+          {
+            "id": "item-003",
+            "question": "0 + 8",
+            "expected": "8",
+            "correct": true,
+            "reason": "correct",
+            "actual": "8"
+          },
+          {
+            "id": "item-004",
+            "question": "9 + 0",
+            "expected": "9",
+            "correct": true,
+            "reason": "correct",
+            "actual": "9"
+          },
+          {
+            "id": "item-005",
+            "question": "99 + 1",
+            "expected": "100",
+            "correct": true,
+            "reason": "correct",
+            "actual": "100"
+          },
+          {
+            "id": "item-006",
+            "question": "199 + 201",
+            "expected": "400",
+            "correct": true,
+            "reason": "correct",
+            "actual": "400"
+          },
+          {
+            "id": "item-007",
+            "question": "408 + 297",
+            "expected": "705",
+            "correct": true,
+            "reason": "correct",
+            "actual": "705"
+          },
+          {
+            "id": "item-008",
+            "question": "1256 + 3789",
+            "expected": "5045",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5045"
+          },
+          {
+            "id": "item-009",
+            "question": "988 + 205",
+            "expected": "1193",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1193"
+          },
+          {
+            "id": "item-010",
+            "question": "661 + 702",
+            "expected": "1363",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1363"
+          },
+          {
+            "id": "item-011",
+            "question": "155 + 118",
+            "expected": "273",
+            "correct": true,
+            "reason": "correct",
+            "actual": "273"
+          },
+          {
+            "id": "item-012",
+            "question": "475 + 287",
+            "expected": "762",
+            "correct": true,
+            "reason": "correct",
+            "actual": "762"
+          },
+          {
+            "id": "item-013",
+            "question": "662 + 220",
+            "expected": "882",
+            "correct": true,
+            "reason": "correct",
+            "actual": "882"
+          },
+          {
+            "id": "item-014",
+            "question": "562 + 809",
+            "expected": "1371",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1371"
+          },
+          {
+            "id": "item-015",
+            "question": "508 + 4",
+            "expected": "512",
+            "correct": true,
+            "reason": "correct",
+            "actual": "512"
+          },
+          {
+            "id": "item-016",
+            "question": "807 + 777",
+            "expected": "1584",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1584"
+          },
+          {
+            "id": "item-017",
+            "question": "A box has 17 pencils. We put in 26 more pencils. How many pencils are there now?",
+            "expected": "43",
+            "correct": true,
+            "reason": "correct",
+            "actual": "43"
+          },
+          {
+            "id": "item-018",
+            "question": "A box has 38 pencils. We put in 45 more pencils. How many pencils are there now?",
+            "expected": "83",
+            "correct": true,
+            "reason": "correct",
+            "actual": "83"
+          },
+          {
+            "id": "item-019",
+            "question": "A box has 49 pencils. We put in 38 more pencils. How many pencils are there now?",
+            "expected": "87",
+            "correct": true,
+            "reason": "correct",
+            "actual": "87"
+          },
+          {
+            "id": "item-020",
+            "question": "A box has 57 pencils. We put in 64 more pencils. How many pencils are there now?",
+            "expected": "121",
+            "correct": true,
+            "reason": "correct",
+            "actual": "121"
+          },
+          {
+            "id": "item-021",
+            "question": "15 - 4",
+            "expected": "11",
+            "correct": true,
+            "reason": "correct",
+            "actual": "11"
+          },
+          {
+            "id": "item-022",
+            "question": "10 - 0",
+            "expected": "10",
+            "correct": true,
+            "reason": "correct",
+            "actual": "10"
+          },
+          {
+            "id": "item-023",
+            "question": "10 - 10",
+            "expected": "0",
+            "correct": true,
+            "reason": "correct",
+            "actual": "0"
+          },
+          {
+            "id": "item-024",
+            "question": "20 - 1",
+            "expected": "19",
+            "correct": true,
+            "reason": "correct",
+            "actual": "19"
+          },
+          {
+            "id": "item-025",
+            "question": "100 - 37",
+            "expected": "63",
+            "correct": true,
+            "reason": "correct",
+            "actual": "63"
+          },
+          {
+            "id": "item-026",
+            "question": "1000 - 486",
+            "expected": "514",
+            "correct": true,
+            "reason": "correct",
+            "actual": "514"
+          },
+          {
+            "id": "item-027",
+            "question": "700 - 368",
+            "expected": "332",
+            "correct": true,
+            "reason": "correct",
+            "actual": "332"
+          },
+          {
+            "id": "item-028",
+            "question": "4002 - 1786",
+            "expected": "2216",
+            "correct": true,
+            "reason": "correct",
+            "actual": "2216"
+          },
+          {
+            "id": "item-029",
+            "question": "313 - 56",
+            "expected": "257",
+            "correct": true,
+            "reason": "correct",
+            "actual": "257"
+          },
+          {
+            "id": "item-030",
+            "question": "154 - 70",
+            "expected": "84",
+            "correct": true,
+            "reason": "correct",
+            "actual": "84"
+          },
+          {
+            "id": "item-031",
+            "question": "318 - 133",
+            "expected": "185",
+            "correct": true,
+            "reason": "correct",
+            "actual": "185"
+          },
+          {
+            "id": "item-032",
+            "question": "654 - 348",
+            "expected": "306",
+            "correct": true,
+            "reason": "correct",
+            "actual": "306"
+          },
+          {
+            "id": "item-033",
+            "question": "888 - 428",
+            "expected": "460",
+            "correct": true,
+            "reason": "correct",
+            "actual": "460"
+          },
+          {
+            "id": "item-034",
+            "question": "223 - 178",
+            "expected": "45",
+            "correct": true,
+            "reason": "correct",
+            "actual": "45"
+          },
+          {
+            "id": "item-035",
+            "question": "635 - 375",
+            "expected": "260",
+            "correct": true,
+            "reason": "correct",
+            "actual": "260"
+          },
+          {
+            "id": "item-036",
+            "question": "771 - 361",
+            "expected": "410",
+            "correct": true,
+            "reason": "correct",
+            "actual": "410"
+          },
+          {
+            "id": "item-037",
+            "question": "There are 63 books on a shelf. We take away 27 books. How many books remain?",
+            "expected": "36",
+            "correct": true,
+            "reason": "correct",
+            "actual": "36"
+          },
+          {
+            "id": "item-038",
+            "question": "There are 81 books on a shelf. We take away 39 books. How many books remain?",
+            "expected": "42",
+            "correct": true,
+            "reason": "correct",
+            "actual": "42"
+          },
+          {
+            "id": "item-039",
+            "question": "There are 104 books on a shelf. We take away 57 books. How many books remain?",
+            "expected": "47",
+            "correct": true,
+            "reason": "correct",
+            "actual": "47"
+          },
+          {
+            "id": "item-040",
+            "question": "There are 200 books on a shelf. We take away 86 books. How many books remain?",
+            "expected": "114",
+            "correct": true,
+            "reason": "correct",
+            "actual": "114"
+          },
+          {
+            "id": "item-041",
+            "question": "0 * 8",
+            "expected": "0",
+            "correct": true,
+            "reason": "correct",
+            "actual": "0"
+          },
+          {
+            "id": "item-042",
+            "question": "1 * 17",
+            "expected": "17",
+            "correct": true,
+            "reason": "correct",
+            "actual": "17"
+          },
+          {
+            "id": "item-043",
+            "question": "7 * 8",
+            "expected": "56",
+            "correct": true,
+            "reason": "correct",
+            "actual": "56"
+          },
+          {
+            "id": "item-044",
+            "question": "24 * 6",
+            "expected": "144",
+            "correct": true,
+            "reason": "correct",
+            "actual": "144"
+          },
+          {
+            "id": "item-045",
+            "question": "36 * 14",
+            "expected": "504",
+            "correct": true,
+            "reason": "correct",
+            "actual": "504"
+          },
+          {
+            "id": "item-046",
+            "question": "19 * 11",
+            "expected": "209",
+            "correct": true,
+            "reason": "correct",
+            "actual": "209"
+          },
+          {
+            "id": "item-047",
+            "question": "24 * 11",
+            "expected": "264",
+            "correct": true,
+            "reason": "correct",
+            "actual": "264"
+          },
+          {
+            "id": "item-048",
+            "question": "13 * 13",
+            "expected": "169",
+            "correct": true,
+            "reason": "correct",
+            "actual": "169"
+          },
+          {
+            "id": "item-049",
+            "question": "27 * 20",
+            "expected": "540",
+            "correct": true,
+            "reason": "correct",
+            "actual": "540"
+          },
+          {
+            "id": "item-050",
+            "question": "32 * 12",
+            "expected": "384",
+            "correct": true,
+            "reason": "correct",
+            "actual": "384"
+          },
+          {
+            "id": "item-051",
+            "question": "15 * 19",
+            "expected": "285",
+            "correct": true,
+            "reason": "correct",
+            "actual": "285"
+          },
+          {
+            "id": "item-052",
+            "question": "31 * 14",
+            "expected": "434",
+            "correct": true,
+            "reason": "correct",
+            "actual": "434"
+          },
+          {
+            "id": "item-053",
+            "question": "36 * 7",
+            "expected": "252",
+            "correct": true,
+            "reason": "correct",
+            "actual": "252"
+          },
+          {
+            "id": "item-054",
+            "question": "17 * 19",
+            "expected": "323",
+            "correct": true,
+            "reason": "correct",
+            "actual": "323"
+          },
+          {
+            "id": "item-055",
+            "question": "2 * 7",
+            "expected": "14",
+            "correct": true,
+            "reason": "correct",
+            "actual": "14"
+          },
+          {
+            "id": "item-056",
+            "question": "19 * 4",
+            "expected": "76",
+            "correct": true,
+            "reason": "correct",
+            "actual": "76"
+          },
+          {
+            "id": "item-057",
+            "question": "There are 5 bags with 13 apples in each bag. How many apples are there altogether?",
+            "expected": "65",
+            "correct": true,
+            "reason": "correct",
+            "actual": "65"
+          },
+          {
+            "id": "item-058",
+            "question": "There are 8 bags with 19 apples in each bag. How many apples are there altogether?",
+            "expected": "152",
+            "correct": true,
+            "reason": "correct",
+            "actual": "152"
+          },
+          {
+            "id": "item-059",
+            "question": "There are 6 bags with 19 apples in each bag. How many apples are there altogether?",
+            "expected": "114",
+            "correct": true,
+            "reason": "correct",
+            "actual": "114"
+          },
+          {
+            "id": "item-060",
+            "question": "There are 9 bags with 23 apples in each bag. How many apples are there altogether?",
+            "expected": "207",
+            "correct": true,
+            "reason": "correct",
+            "actual": "207"
+          },
+          {
+            "id": "item-061",
+            "question": "0 / 7",
+            "expected": "0",
+            "correct": true,
+            "reason": "correct",
+            "actual": "0"
+          },
+          {
+            "id": "item-062",
+            "question": "13 / 1",
+            "expected": "13",
+            "correct": true,
+            "reason": "correct",
+            "actual": "13"
+          },
+          {
+            "id": "item-063",
+            "question": "84 / 7",
+            "expected": "12",
+            "correct": true,
+            "reason": "correct",
+            "actual": "12"
+          },
+          {
+            "id": "item-064",
+            "question": "156 / 12",
+            "expected": "13",
+            "correct": true,
+            "reason": "correct",
+            "actual": "13"
+          },
+          {
+            "id": "item-065",
+            "question": "405 / 9",
+            "expected": "45",
+            "correct": true,
+            "reason": "correct",
+            "actual": "45"
+          },
+          {
+            "id": "item-066",
+            "question": "144 / 12",
+            "expected": "12",
+            "correct": true,
+            "reason": "correct",
+            "actual": "12"
+          },
+          {
+            "id": "item-067",
+            "question": "320 / 8",
+            "expected": "40",
+            "correct": true,
+            "reason": "correct",
+            "actual": "40"
+          },
+          {
+            "id": "item-068",
+            "question": "91 / 7",
+            "expected": "13",
+            "correct": true,
+            "reason": "correct",
+            "actual": "13"
+          },
+          {
+            "id": "item-069",
+            "question": "252 / 7",
+            "expected": "36",
+            "correct": true,
+            "reason": "correct",
+            "actual": "36"
+          },
+          {
+            "id": "item-070",
+            "question": "256 / 8",
+            "expected": "32",
+            "correct": true,
+            "reason": "correct",
+            "actual": "32"
+          },
+          {
+            "id": "item-071",
+            "question": "528 / 16",
+            "expected": "33",
+            "correct": true,
+            "reason": "correct",
+            "actual": "33"
+          },
+          {
+            "id": "item-072",
+            "question": "544 / 17",
+            "expected": "32",
+            "correct": true,
+            "reason": "correct",
+            "actual": "32"
+          },
+          {
+            "id": "item-073",
+            "question": "272 / 17",
+            "expected": "16",
+            "correct": true,
+            "reason": "correct",
+            "actual": "16"
+          },
+          {
+            "id": "item-074",
+            "question": "210 / 15",
+            "expected": "14",
+            "correct": true,
+            "reason": "correct",
+            "actual": "14"
+          },
+          {
+            "id": "item-075",
+            "question": "495 / 15",
+            "expected": "33",
+            "correct": true,
+            "reason": "correct",
+            "actual": "33"
+          },
+          {
+            "id": "item-076",
+            "question": "168 / 8",
+            "expected": "21",
+            "correct": true,
+            "reason": "correct",
+            "actual": "21"
+          },
+          {
+            "id": "item-077",
+            "question": "132 sweets are shared equally among 6 children. How many sweets does each child get?",
+            "expected": "22",
+            "correct": true,
+            "reason": "correct",
+            "actual": "22"
+          },
+          {
+            "id": "item-078",
+            "question": "136 sweets are shared equally among 8 children. How many sweets does each child get?",
+            "expected": "17",
+            "correct": true,
+            "reason": "correct",
+            "actual": "17"
+          },
+          {
+            "id": "item-079",
+            "question": "171 sweets are shared equally among 9 children. How many sweets does each child get?",
+            "expected": "19",
+            "correct": true,
+            "reason": "correct",
+            "actual": "19"
+          },
+          {
+            "id": "item-080",
+            "question": "161 sweets are shared equally among 7 children. How many sweets does each child get?",
+            "expected": "23",
+            "correct": true,
+            "reason": "correct",
+            "actual": "23"
+          },
+          {
+            "id": "item-081",
+            "question": "1/4 + 1/4",
+            "expected": "1/2",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1/2"
+          },
+          {
+            "id": "item-082",
+            "question": "1/2 + 1/3",
+            "expected": "5/6",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5/6"
+          },
+          {
+            "id": "item-083",
+            "question": "2/9 + 1/3",
+            "expected": "5/9",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5/9"
+          },
+          {
+            "id": "item-084",
+            "question": "1/4 + 3/5",
+            "expected": "17/20",
+            "correct": true,
+            "reason": "correct",
+            "actual": "17/20"
+          },
+          {
+            "id": "item-085",
+            "question": "5/6 - 1/3",
+            "expected": "1/2",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/6"
+          },
+          {
+            "id": "item-086",
+            "question": "1/2 - 5/12",
+            "expected": "1/12",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "-1/12"
+          },
+          {
+            "id": "item-087",
+            "question": "5/6 - 1/7",
+            "expected": "29/42",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "23/42"
+          },
+          {
+            "id": "item-088",
+            "question": "1/2 - 4/11",
+            "expected": "3/22",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "-17/22"
+          },
+          {
+            "id": "item-089",
+            "question": "8/11 * 1/6",
+            "expected": "4/33",
+            "correct": true,
+            "reason": "correct",
+            "actual": "4/33"
+          },
+          {
+            "id": "item-090",
+            "question": "4/9 * 3/10",
+            "expected": "2/15",
+            "correct": true,
+            "reason": "correct",
+            "actual": "2/15"
+          },
+          {
+            "id": "item-091",
+            "question": "7/9 * 2/5",
+            "expected": "14/45",
+            "correct": true,
+            "reason": "correct",
+            "actual": "14/45"
+          },
+          {
+            "id": "item-092",
+            "question": "1/7 * 9/10",
+            "expected": "9/70",
+            "correct": true,
+            "reason": "correct",
+            "actual": "9/70"
+          },
+          {
+            "id": "item-093",
+            "question": "7/8 divided by 9/11",
+            "expected": "77/72",
+            "correct": true,
+            "reason": "correct",
+            "actual": "77/72"
+          },
+          {
+            "id": "item-094",
+            "question": "1/2 divided by 1/3",
+            "expected": "3/2",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/2"
+          },
+          {
+            "id": "item-095",
+            "question": "7/12 divided by 1/2",
+            "expected": "7/6",
+            "correct": true,
+            "reason": "correct",
+            "actual": "7/6"
+          },
+          {
+            "id": "item-096",
+            "question": "1/4 divided by 2/3",
+            "expected": "3/8",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/8"
+          },
+          {
+            "id": "item-097",
+            "question": "Simplify 18/24",
+            "expected": "3/4",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/4"
+          },
+          {
+            "id": "item-098",
+            "question": "Simplify 21/35",
+            "expected": "3/5",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/5"
+          },
+          {
+            "id": "item-099",
+            "question": "What is 3/5 of 40 counters?",
+            "expected": "24",
+            "correct": true,
+            "reason": "correct",
+            "actual": "24"
+          },
+          {
+            "id": "item-100",
+            "question": "What is 5/8 of 56 counters?",
+            "expected": "35",
+            "correct": true,
+            "reason": "correct",
+            "actual": "35"
+          },
+          {
+            "id": "item-101",
+            "question": "85 + 8",
+            "expected": "93",
+            "correct": true,
+            "reason": "correct",
+            "actual": "93"
+          },
+          {
+            "id": "item-102",
+            "question": "72 - 43",
+            "expected": "29",
+            "correct": true,
+            "reason": "correct",
+            "actual": "29"
+          },
+          {
+            "id": "item-103",
+            "question": "4 x 8",
+            "expected": "32",
+            "correct": true,
+            "reason": "correct",
+            "actual": "32"
+          },
+          {
+            "id": "item-104",
+            "question": "108 / 6",
+            "expected": "18",
+            "correct": true,
+            "reason": "correct",
+            "actual": "18"
+          },
+          {
+            "id": "item-105",
+            "question": "1/4 + 13/16",
+            "expected": "17/16",
+            "correct": false,
+            "reason": "unparseable_format",
+            "actual": "10/16 + 13/16 = 23/16"
+          },
+          {
+            "id": "item-106",
+            "question": "2/3 - 4/9",
+            "expected": "2/9",
+            "correct": true,
+            "reason": "correct",
+            "actual": "2/9"
+          },
+          {
+            "id": "item-107",
+            "question": "13/15 x 5/13",
+            "expected": "1/3",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "5/3"
+          },
+          {
+            "id": "item-108",
+            "question": "2/3 / 15/16",
+            "expected": "32/45",
+            "correct": true,
+            "reason": "correct",
+            "actual": "32/45"
+          },
+          {
+            "id": "item-109",
+            "question": "9.2 + 4.7",
+            "expected": "139/10",
+            "correct": true,
+            "reason": "correct",
+            "actual": "13.9"
+          },
+          {
+            "id": "item-110",
+            "question": "28.1 - 7.7",
+            "expected": "102/5",
+            "correct": true,
+            "reason": "correct",
+            "actual": "20.4"
+          },
+          {
+            "id": "item-111",
+            "question": "8.8 x 8.1",
+            "expected": "1782/25",
+            "correct": true,
+            "reason": "correct",
+            "actual": "71.28"
+          },
+          {
+            "id": "item-112",
+            "question": "5.6 / 0.7",
+            "expected": "8",
+            "correct": true,
+            "reason": "correct",
+            "actual": "8"
+          },
+          {
+            "id": "item-113",
+            "question": "-47 + 4",
+            "expected": "-43",
+            "correct": true,
+            "reason": "correct",
+            "actual": "-43"
+          },
+          {
+            "id": "item-114",
+            "question": "-74 - -6",
+            "expected": "-68",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "68"
+          },
+          {
+            "id": "item-115",
+            "question": "-8 x -2",
+            "expected": "16",
+            "correct": true,
+            "reason": "correct",
+            "actual": "16"
+          },
+          {
+            "id": "item-116",
+            "question": "-18 / 2",
+            "expected": "-9",
+            "correct": true,
+            "reason": "correct",
+            "actual": "-9"
+          },
+          {
+            "id": "item-117",
+            "question": "12 + 3 - 6 x 12 / 3",
+            "expected": "-9",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "12"
+          },
+          {
+            "id": "item-118",
+            "question": "(13 - 8) x 3^2",
+            "expected": "45",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "15"
+          },
+          {
+            "id": "item-119",
+            "question": "What is 30% of 440?",
+            "expected": "132",
+            "correct": true,
+            "reason": "correct",
+            "actual": "132"
+          },
+          {
+            "id": "item-120",
+            "question": "3 notebooks cost 30 coins. At the same price, what do 4 notebooks cost?",
+            "expected": "40",
+            "correct": true,
+            "reason": "correct",
+            "actual": "40"
+          },
+          {
+            "id": "item-121",
+            "question": "Solve 3x + 9 = 24 for x.",
+            "expected": "5",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5"
+          },
+          {
+            "id": "item-122",
+            "question": "A rectangle is 18 cm long and 4 cm wide. What is its perimeter in cm?",
+            "expected": "44",
+            "correct": true,
+            "reason": "correct",
+            "actual": "44"
+          },
+          {
+            "id": "item-123",
+            "question": "A triangle has base 12 cm and perpendicular height 6 cm. What is its area in square cm?",
+            "expected": "36",
+            "correct": true,
+            "reason": "correct",
+            "actual": "36"
+          },
+          {
+            "id": "item-124",
+            "question": "A rectangular box measures 4 cm by 5 cm by 7 cm. Find its volume in cubic cm.",
+            "expected": "140",
+            "correct": true,
+            "reason": "correct",
+            "actual": "140"
+          },
+          {
+            "id": "item-125",
+            "question": "Find the mean of 12, 4, 8, 20.",
+            "expected": "11",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "10.0"
+          },
+          {
+            "id": "item-126",
+            "question": "A bag has 18 red and 6 blue counters. All are equally likely. What is the probability of picking a red counter?",
+            "expected": "3/4",
+            "correct": true,
+            "reason": "correct",
+            "actual": "0.75"
+          },
+          {
+            "id": "item-127",
+            "question": "3+5-6x4/2",
+            "expected": "-4",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "1"
+          }
+        ]
+      },
+      "pilot": {
+        "source_file": "outputs/training/v8-response-pilot/completed-export/pilot20-v8-matched-nonthinking-maths.json",
+        "source_sha256": "bbf7b96f3dcd62d1b7d1008a53636bbab3653c3ca9097e9be785445a877e5dc0",
+        "probes_file": "outputs/training/v8-response-pilot/completed-export/math-probes.json",
+        "probes_sha256": "a93fd2f021192416ac660e0ca5c33ab92021463a433fcc3c2b0ebc9a901f9943",
+        "count": 127,
+        "correct": 118,
+        "failed": 9,
+        "reason_counts": {
+          "correct": 118,
+          "wrong_value": 8,
+          "unparseable_format": 1
+        },
+        "format_review_ids": [
+          "item-105"
+        ],
+        "results": [
+          {
+            "id": "item-001",
+            "question": "2 + 2",
+            "expected": "4",
+            "correct": true,
+            "reason": "correct",
+            "actual": "4"
+          },
+          {
+            "id": "item-002",
+            "question": "14 + 9",
+            "expected": "23",
+            "correct": true,
+            "reason": "correct",
+            "actual": "23"
+          },
+          {
+            "id": "item-003",
+            "question": "0 + 8",
+            "expected": "8",
+            "correct": true,
+            "reason": "correct",
+            "actual": "8"
+          },
+          {
+            "id": "item-004",
+            "question": "9 + 0",
+            "expected": "9",
+            "correct": true,
+            "reason": "correct",
+            "actual": "9"
+          },
+          {
+            "id": "item-005",
+            "question": "99 + 1",
+            "expected": "100",
+            "correct": true,
+            "reason": "correct",
+            "actual": "100"
+          },
+          {
+            "id": "item-006",
+            "question": "199 + 201",
+            "expected": "400",
+            "correct": true,
+            "reason": "correct",
+            "actual": "400"
+          },
+          {
+            "id": "item-007",
+            "question": "408 + 297",
+            "expected": "705",
+            "correct": true,
+            "reason": "correct",
+            "actual": "705"
+          },
+          {
+            "id": "item-008",
+            "question": "1256 + 3789",
+            "expected": "5045",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5045"
+          },
+          {
+            "id": "item-009",
+            "question": "988 + 205",
+            "expected": "1193",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1193"
+          },
+          {
+            "id": "item-010",
+            "question": "661 + 702",
+            "expected": "1363",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1363"
+          },
+          {
+            "id": "item-011",
+            "question": "155 + 118",
+            "expected": "273",
+            "correct": true,
+            "reason": "correct",
+            "actual": "273"
+          },
+          {
+            "id": "item-012",
+            "question": "475 + 287",
+            "expected": "762",
+            "correct": true,
+            "reason": "correct",
+            "actual": "762"
+          },
+          {
+            "id": "item-013",
+            "question": "662 + 220",
+            "expected": "882",
+            "correct": true,
+            "reason": "correct",
+            "actual": "882"
+          },
+          {
+            "id": "item-014",
+            "question": "562 + 809",
+            "expected": "1371",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1371"
+          },
+          {
+            "id": "item-015",
+            "question": "508 + 4",
+            "expected": "512",
+            "correct": true,
+            "reason": "correct",
+            "actual": "512"
+          },
+          {
+            "id": "item-016",
+            "question": "807 + 777",
+            "expected": "1584",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1584"
+          },
+          {
+            "id": "item-017",
+            "question": "A box has 17 pencils. We put in 26 more pencils. How many pencils are there now?",
+            "expected": "43",
+            "correct": true,
+            "reason": "correct",
+            "actual": "43"
+          },
+          {
+            "id": "item-018",
+            "question": "A box has 38 pencils. We put in 45 more pencils. How many pencils are there now?",
+            "expected": "83",
+            "correct": true,
+            "reason": "correct",
+            "actual": "83"
+          },
+          {
+            "id": "item-019",
+            "question": "A box has 49 pencils. We put in 38 more pencils. How many pencils are there now?",
+            "expected": "87",
+            "correct": true,
+            "reason": "correct",
+            "actual": "87"
+          },
+          {
+            "id": "item-020",
+            "question": "A box has 57 pencils. We put in 64 more pencils. How many pencils are there now?",
+            "expected": "121",
+            "correct": true,
+            "reason": "correct",
+            "actual": "121"
+          },
+          {
+            "id": "item-021",
+            "question": "15 - 4",
+            "expected": "11",
+            "correct": true,
+            "reason": "correct",
+            "actual": "11"
+          },
+          {
+            "id": "item-022",
+            "question": "10 - 0",
+            "expected": "10",
+            "correct": true,
+            "reason": "correct",
+            "actual": "10"
+          },
+          {
+            "id": "item-023",
+            "question": "10 - 10",
+            "expected": "0",
+            "correct": true,
+            "reason": "correct",
+            "actual": "0"
+          },
+          {
+            "id": "item-024",
+            "question": "20 - 1",
+            "expected": "19",
+            "correct": true,
+            "reason": "correct",
+            "actual": "19"
+          },
+          {
+            "id": "item-025",
+            "question": "100 - 37",
+            "expected": "63",
+            "correct": true,
+            "reason": "correct",
+            "actual": "63"
+          },
+          {
+            "id": "item-026",
+            "question": "1000 - 486",
+            "expected": "514",
+            "correct": true,
+            "reason": "correct",
+            "actual": "514"
+          },
+          {
+            "id": "item-027",
+            "question": "700 - 368",
+            "expected": "332",
+            "correct": true,
+            "reason": "correct",
+            "actual": "332"
+          },
+          {
+            "id": "item-028",
+            "question": "4002 - 1786",
+            "expected": "2216",
+            "correct": true,
+            "reason": "correct",
+            "actual": "2216"
+          },
+          {
+            "id": "item-029",
+            "question": "313 - 56",
+            "expected": "257",
+            "correct": true,
+            "reason": "correct",
+            "actual": "257"
+          },
+          {
+            "id": "item-030",
+            "question": "154 - 70",
+            "expected": "84",
+            "correct": true,
+            "reason": "correct",
+            "actual": "84"
+          },
+          {
+            "id": "item-031",
+            "question": "318 - 133",
+            "expected": "185",
+            "correct": true,
+            "reason": "correct",
+            "actual": "185"
+          },
+          {
+            "id": "item-032",
+            "question": "654 - 348",
+            "expected": "306",
+            "correct": true,
+            "reason": "correct",
+            "actual": "306"
+          },
+          {
+            "id": "item-033",
+            "question": "888 - 428",
+            "expected": "460",
+            "correct": true,
+            "reason": "correct",
+            "actual": "460"
+          },
+          {
+            "id": "item-034",
+            "question": "223 - 178",
+            "expected": "45",
+            "correct": true,
+            "reason": "correct",
+            "actual": "45"
+          },
+          {
+            "id": "item-035",
+            "question": "635 - 375",
+            "expected": "260",
+            "correct": true,
+            "reason": "correct",
+            "actual": "260"
+          },
+          {
+            "id": "item-036",
+            "question": "771 - 361",
+            "expected": "410",
+            "correct": true,
+            "reason": "correct",
+            "actual": "410"
+          },
+          {
+            "id": "item-037",
+            "question": "There are 63 books on a shelf. We take away 27 books. How many books remain?",
+            "expected": "36",
+            "correct": true,
+            "reason": "correct",
+            "actual": "36"
+          },
+          {
+            "id": "item-038",
+            "question": "There are 81 books on a shelf. We take away 39 books. How many books remain?",
+            "expected": "42",
+            "correct": true,
+            "reason": "correct",
+            "actual": "42"
+          },
+          {
+            "id": "item-039",
+            "question": "There are 104 books on a shelf. We take away 57 books. How many books remain?",
+            "expected": "47",
+            "correct": true,
+            "reason": "correct",
+            "actual": "47"
+          },
+          {
+            "id": "item-040",
+            "question": "There are 200 books on a shelf. We take away 86 books. How many books remain?",
+            "expected": "114",
+            "correct": true,
+            "reason": "correct",
+            "actual": "114"
+          },
+          {
+            "id": "item-041",
+            "question": "0 * 8",
+            "expected": "0",
+            "correct": true,
+            "reason": "correct",
+            "actual": "0"
+          },
+          {
+            "id": "item-042",
+            "question": "1 * 17",
+            "expected": "17",
+            "correct": true,
+            "reason": "correct",
+            "actual": "17"
+          },
+          {
+            "id": "item-043",
+            "question": "7 * 8",
+            "expected": "56",
+            "correct": true,
+            "reason": "correct",
+            "actual": "56"
+          },
+          {
+            "id": "item-044",
+            "question": "24 * 6",
+            "expected": "144",
+            "correct": true,
+            "reason": "correct",
+            "actual": "144"
+          },
+          {
+            "id": "item-045",
+            "question": "36 * 14",
+            "expected": "504",
+            "correct": true,
+            "reason": "correct",
+            "actual": "504"
+          },
+          {
+            "id": "item-046",
+            "question": "19 * 11",
+            "expected": "209",
+            "correct": true,
+            "reason": "correct",
+            "actual": "209"
+          },
+          {
+            "id": "item-047",
+            "question": "24 * 11",
+            "expected": "264",
+            "correct": true,
+            "reason": "correct",
+            "actual": "264"
+          },
+          {
+            "id": "item-048",
+            "question": "13 * 13",
+            "expected": "169",
+            "correct": true,
+            "reason": "correct",
+            "actual": "169"
+          },
+          {
+            "id": "item-049",
+            "question": "27 * 20",
+            "expected": "540",
+            "correct": true,
+            "reason": "correct",
+            "actual": "540"
+          },
+          {
+            "id": "item-050",
+            "question": "32 * 12",
+            "expected": "384",
+            "correct": true,
+            "reason": "correct",
+            "actual": "384"
+          },
+          {
+            "id": "item-051",
+            "question": "15 * 19",
+            "expected": "285",
+            "correct": true,
+            "reason": "correct",
+            "actual": "285"
+          },
+          {
+            "id": "item-052",
+            "question": "31 * 14",
+            "expected": "434",
+            "correct": true,
+            "reason": "correct",
+            "actual": "434"
+          },
+          {
+            "id": "item-053",
+            "question": "36 * 7",
+            "expected": "252",
+            "correct": true,
+            "reason": "correct",
+            "actual": "252"
+          },
+          {
+            "id": "item-054",
+            "question": "17 * 19",
+            "expected": "323",
+            "correct": true,
+            "reason": "correct",
+            "actual": "323"
+          },
+          {
+            "id": "item-055",
+            "question": "2 * 7",
+            "expected": "14",
+            "correct": true,
+            "reason": "correct",
+            "actual": "14"
+          },
+          {
+            "id": "item-056",
+            "question": "19 * 4",
+            "expected": "76",
+            "correct": true,
+            "reason": "correct",
+            "actual": "76"
+          },
+          {
+            "id": "item-057",
+            "question": "There are 5 bags with 13 apples in each bag. How many apples are there altogether?",
+            "expected": "65",
+            "correct": true,
+            "reason": "correct",
+            "actual": "65"
+          },
+          {
+            "id": "item-058",
+            "question": "There are 8 bags with 19 apples in each bag. How many apples are there altogether?",
+            "expected": "152",
+            "correct": true,
+            "reason": "correct",
+            "actual": "152"
+          },
+          {
+            "id": "item-059",
+            "question": "There are 6 bags with 19 apples in each bag. How many apples are there altogether?",
+            "expected": "114",
+            "correct": true,
+            "reason": "correct",
+            "actual": "114"
+          },
+          {
+            "id": "item-060",
+            "question": "There are 9 bags with 23 apples in each bag. How many apples are there altogether?",
+            "expected": "207",
+            "correct": true,
+            "reason": "correct",
+            "actual": "207"
+          },
+          {
+            "id": "item-061",
+            "question": "0 / 7",
+            "expected": "0",
+            "correct": true,
+            "reason": "correct",
+            "actual": "0"
+          },
+          {
+            "id": "item-062",
+            "question": "13 / 1",
+            "expected": "13",
+            "correct": true,
+            "reason": "correct",
+            "actual": "13"
+          },
+          {
+            "id": "item-063",
+            "question": "84 / 7",
+            "expected": "12",
+            "correct": true,
+            "reason": "correct",
+            "actual": "12"
+          },
+          {
+            "id": "item-064",
+            "question": "156 / 12",
+            "expected": "13",
+            "correct": true,
+            "reason": "correct",
+            "actual": "13"
+          },
+          {
+            "id": "item-065",
+            "question": "405 / 9",
+            "expected": "45",
+            "correct": true,
+            "reason": "correct",
+            "actual": "45"
+          },
+          {
+            "id": "item-066",
+            "question": "144 / 12",
+            "expected": "12",
+            "correct": true,
+            "reason": "correct",
+            "actual": "12"
+          },
+          {
+            "id": "item-067",
+            "question": "320 / 8",
+            "expected": "40",
+            "correct": true,
+            "reason": "correct",
+            "actual": "40"
+          },
+          {
+            "id": "item-068",
+            "question": "91 / 7",
+            "expected": "13",
+            "correct": true,
+            "reason": "correct",
+            "actual": "13"
+          },
+          {
+            "id": "item-069",
+            "question": "252 / 7",
+            "expected": "36",
+            "correct": true,
+            "reason": "correct",
+            "actual": "36"
+          },
+          {
+            "id": "item-070",
+            "question": "256 / 8",
+            "expected": "32",
+            "correct": true,
+            "reason": "correct",
+            "actual": "32"
+          },
+          {
+            "id": "item-071",
+            "question": "528 / 16",
+            "expected": "33",
+            "correct": true,
+            "reason": "correct",
+            "actual": "33"
+          },
+          {
+            "id": "item-072",
+            "question": "544 / 17",
+            "expected": "32",
+            "correct": true,
+            "reason": "correct",
+            "actual": "32"
+          },
+          {
+            "id": "item-073",
+            "question": "272 / 17",
+            "expected": "16",
+            "correct": true,
+            "reason": "correct",
+            "actual": "16"
+          },
+          {
+            "id": "item-074",
+            "question": "210 / 15",
+            "expected": "14",
+            "correct": true,
+            "reason": "correct",
+            "actual": "14"
+          },
+          {
+            "id": "item-075",
+            "question": "495 / 15",
+            "expected": "33",
+            "correct": true,
+            "reason": "correct",
+            "actual": "33"
+          },
+          {
+            "id": "item-076",
+            "question": "168 / 8",
+            "expected": "21",
+            "correct": true,
+            "reason": "correct",
+            "actual": "21"
+          },
+          {
+            "id": "item-077",
+            "question": "132 sweets are shared equally among 6 children. How many sweets does each child get?",
+            "expected": "22",
+            "correct": true,
+            "reason": "correct",
+            "actual": "22"
+          },
+          {
+            "id": "item-078",
+            "question": "136 sweets are shared equally among 8 children. How many sweets does each child get?",
+            "expected": "17",
+            "correct": true,
+            "reason": "correct",
+            "actual": "17"
+          },
+          {
+            "id": "item-079",
+            "question": "171 sweets are shared equally among 9 children. How many sweets does each child get?",
+            "expected": "19",
+            "correct": true,
+            "reason": "correct",
+            "actual": "19"
+          },
+          {
+            "id": "item-080",
+            "question": "161 sweets are shared equally among 7 children. How many sweets does each child get?",
+            "expected": "23",
+            "correct": true,
+            "reason": "correct",
+            "actual": "23"
+          },
+          {
+            "id": "item-081",
+            "question": "1/4 + 1/4",
+            "expected": "1/2",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1/2"
+          },
+          {
+            "id": "item-082",
+            "question": "1/2 + 1/3",
+            "expected": "5/6",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5/6"
+          },
+          {
+            "id": "item-083",
+            "question": "2/9 + 1/3",
+            "expected": "5/9",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5/9"
+          },
+          {
+            "id": "item-084",
+            "question": "1/4 + 3/5",
+            "expected": "17/20",
+            "correct": true,
+            "reason": "correct",
+            "actual": "17/20"
+          },
+          {
+            "id": "item-085",
+            "question": "5/6 - 1/3",
+            "expected": "1/2",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/6"
+          },
+          {
+            "id": "item-086",
+            "question": "1/2 - 5/12",
+            "expected": "1/12",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "-1/12"
+          },
+          {
+            "id": "item-087",
+            "question": "5/6 - 1/7",
+            "expected": "29/42",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "23/42"
+          },
+          {
+            "id": "item-088",
+            "question": "1/2 - 4/11",
+            "expected": "3/22",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "-17/22"
+          },
+          {
+            "id": "item-089",
+            "question": "8/11 * 1/6",
+            "expected": "4/33",
+            "correct": true,
+            "reason": "correct",
+            "actual": "4/33"
+          },
+          {
+            "id": "item-090",
+            "question": "4/9 * 3/10",
+            "expected": "2/15",
+            "correct": true,
+            "reason": "correct",
+            "actual": "2/15"
+          },
+          {
+            "id": "item-091",
+            "question": "7/9 * 2/5",
+            "expected": "14/45",
+            "correct": true,
+            "reason": "correct",
+            "actual": "14/45"
+          },
+          {
+            "id": "item-092",
+            "question": "1/7 * 9/10",
+            "expected": "9/70",
+            "correct": true,
+            "reason": "correct",
+            "actual": "9/70"
+          },
+          {
+            "id": "item-093",
+            "question": "7/8 divided by 9/11",
+            "expected": "77/72",
+            "correct": true,
+            "reason": "correct",
+            "actual": "77/72"
+          },
+          {
+            "id": "item-094",
+            "question": "1/2 divided by 1/3",
+            "expected": "3/2",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/2"
+          },
+          {
+            "id": "item-095",
+            "question": "7/12 divided by 1/2",
+            "expected": "7/6",
+            "correct": true,
+            "reason": "correct",
+            "actual": "7/6"
+          },
+          {
+            "id": "item-096",
+            "question": "1/4 divided by 2/3",
+            "expected": "3/8",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/8"
+          },
+          {
+            "id": "item-097",
+            "question": "Simplify 18/24",
+            "expected": "3/4",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/4"
+          },
+          {
+            "id": "item-098",
+            "question": "Simplify 21/35",
+            "expected": "3/5",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/5"
+          },
+          {
+            "id": "item-099",
+            "question": "What is 3/5 of 40 counters?",
+            "expected": "24",
+            "correct": true,
+            "reason": "correct",
+            "actual": "24"
+          },
+          {
+            "id": "item-100",
+            "question": "What is 5/8 of 56 counters?",
+            "expected": "35",
+            "correct": true,
+            "reason": "correct",
+            "actual": "35"
+          },
+          {
+            "id": "item-101",
+            "question": "85 + 8",
+            "expected": "93",
+            "correct": true,
+            "reason": "correct",
+            "actual": "93"
+          },
+          {
+            "id": "item-102",
+            "question": "72 - 43",
+            "expected": "29",
+            "correct": true,
+            "reason": "correct",
+            "actual": "29"
+          },
+          {
+            "id": "item-103",
+            "question": "4 x 8",
+            "expected": "32",
+            "correct": true,
+            "reason": "correct",
+            "actual": "32"
+          },
+          {
+            "id": "item-104",
+            "question": "108 / 6",
+            "expected": "18",
+            "correct": true,
+            "reason": "correct",
+            "actual": "18"
+          },
+          {
+            "id": "item-105",
+            "question": "1/4 + 13/16",
+            "expected": "17/16",
+            "correct": false,
+            "reason": "unparseable_format",
+            "actual": "10/16 + 13/16 = 23/16"
+          },
+          {
+            "id": "item-106",
+            "question": "2/3 - 4/9",
+            "expected": "2/9",
+            "correct": true,
+            "reason": "correct",
+            "actual": "2/9"
+          },
+          {
+            "id": "item-107",
+            "question": "13/15 x 5/13",
+            "expected": "1/3",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1/3"
+          },
+          {
+            "id": "item-108",
+            "question": "2/3 / 15/16",
+            "expected": "32/45",
+            "correct": true,
+            "reason": "correct",
+            "actual": "32/45"
+          },
+          {
+            "id": "item-109",
+            "question": "9.2 + 4.7",
+            "expected": "139/10",
+            "correct": true,
+            "reason": "correct",
+            "actual": "13.9"
+          },
+          {
+            "id": "item-110",
+            "question": "28.1 - 7.7",
+            "expected": "102/5",
+            "correct": true,
+            "reason": "correct",
+            "actual": "20.4"
+          },
+          {
+            "id": "item-111",
+            "question": "8.8 x 8.1",
+            "expected": "1782/25",
+            "correct": true,
+            "reason": "correct",
+            "actual": "71.28"
+          },
+          {
+            "id": "item-112",
+            "question": "5.6 / 0.7",
+            "expected": "8",
+            "correct": true,
+            "reason": "correct",
+            "actual": "8"
+          },
+          {
+            "id": "item-113",
+            "question": "-47 + 4",
+            "expected": "-43",
+            "correct": true,
+            "reason": "correct",
+            "actual": "-43"
+          },
+          {
+            "id": "item-114",
+            "question": "-74 - -6",
+            "expected": "-68",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "68"
+          },
+          {
+            "id": "item-115",
+            "question": "-8 x -2",
+            "expected": "16",
+            "correct": true,
+            "reason": "correct",
+            "actual": "16"
+          },
+          {
+            "id": "item-116",
+            "question": "-18 / 2",
+            "expected": "-9",
+            "correct": true,
+            "reason": "correct",
+            "actual": "-9"
+          },
+          {
+            "id": "item-117",
+            "question": "12 + 3 - 6 x 12 / 3",
+            "expected": "-9",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "12"
+          },
+          {
+            "id": "item-118",
+            "question": "(13 - 8) x 3^2",
+            "expected": "45",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "15"
+          },
+          {
+            "id": "item-119",
+            "question": "What is 30% of 440?",
+            "expected": "132",
+            "correct": true,
+            "reason": "correct",
+            "actual": "132"
+          },
+          {
+            "id": "item-120",
+            "question": "3 notebooks cost 30 coins. At the same price, what do 4 notebooks cost?",
+            "expected": "40",
+            "correct": true,
+            "reason": "correct",
+            "actual": "40"
+          },
+          {
+            "id": "item-121",
+            "question": "Solve 3x + 9 = 24 for x.",
+            "expected": "5",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5"
+          },
+          {
+            "id": "item-122",
+            "question": "A rectangle is 18 cm long and 4 cm wide. What is its perimeter in cm?",
+            "expected": "44",
+            "correct": true,
+            "reason": "correct",
+            "actual": "44"
+          },
+          {
+            "id": "item-123",
+            "question": "A triangle has base 12 cm and perpendicular height 6 cm. What is its area in square cm?",
+            "expected": "36",
+            "correct": true,
+            "reason": "correct",
+            "actual": "36"
+          },
+          {
+            "id": "item-124",
+            "question": "A rectangular box measures 4 cm by 5 cm by 7 cm. Find its volume in cubic cm.",
+            "expected": "140",
+            "correct": true,
+            "reason": "correct",
+            "actual": "140"
+          },
+          {
+            "id": "item-125",
+            "question": "Find the mean of 12, 4, 8, 20.",
+            "expected": "11",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "10.0"
+          },
+          {
+            "id": "item-126",
+            "question": "A bag has 18 red and 6 blue counters. All are equally likely. What is the probability of picking a red counter?",
+            "expected": "3/4",
+            "correct": true,
+            "reason": "correct",
+            "actual": "3/4"
+          },
+          {
+            "id": "item-127",
+            "question": "3+5-6x4/2",
+            "expected": "-4",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "1"
+          }
+        ]
+      },
+      "improved_ids": [
+        "item-107"
+      ],
+      "regressed_ids": []
+    },
+    "fresh20": {
+      "baseline": {
+        "source_file": "outputs/training/v8-response-pilot/completed-export/base-v8-matched-nonthinking-fresh-maths20.json",
+        "source_sha256": "3482bfa160e383e3f2ba498b5a325ae77c08d47b6b7e3b6039a2d9c9954e18c2",
+        "probes_file": "outputs/training/v8-response-pilot/completed-export/fresh-maths20.json",
+        "probes_sha256": "47642c6a82409157ec5e11425b02394f1fe0ea6f6c801bb5abbadd840955a003",
+        "count": 20,
+        "correct": 15,
+        "failed": 5,
+        "reason_counts": {
+          "correct": 15,
+          "wrong_value": 5
+        },
+        "format_review_ids": [],
+        "results": [
+          {
+            "id": "item-001",
+            "question": "411 + 93",
+            "expected": "504",
+            "correct": true,
+            "reason": "correct",
+            "actual": "504"
+          },
+          {
+            "id": "item-002",
+            "question": "424 + 50",
+            "expected": "474",
+            "correct": true,
+            "reason": "correct",
+            "actual": "474"
+          },
+          {
+            "id": "item-003",
+            "question": "203 - 48",
+            "expected": "155",
+            "correct": true,
+            "reason": "correct",
+            "actual": "155"
+          },
+          {
+            "id": "item-004",
+            "question": "-19 - 18",
+            "expected": "-37",
+            "correct": true,
+            "reason": "correct",
+            "actual": "-37"
+          },
+          {
+            "id": "item-005",
+            "question": "17 * 12",
+            "expected": "204",
+            "correct": true,
+            "reason": "correct",
+            "actual": "204"
+          },
+          {
+            "id": "item-006",
+            "question": "-32 * 12",
+            "expected": "-384",
+            "correct": true,
+            "reason": "correct",
+            "actual": "-384"
+          },
+          {
+            "id": "item-007",
+            "question": "407 / 11",
+            "expected": "37",
+            "correct": true,
+            "reason": "correct",
+            "actual": "37"
+          },
+          {
+            "id": "item-008",
+            "question": "559 / 13",
+            "expected": "43",
+            "correct": true,
+            "reason": "correct",
+            "actual": "43"
+          },
+          {
+            "id": "item-009",
+            "question": "(7/3) + (3/9)",
+            "expected": "8/3",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "3"
+          },
+          {
+            "id": "item-010",
+            "question": "(7/12) + (4/12)",
+            "expected": "11/12",
+            "correct": true,
+            "reason": "correct",
+            "actual": "11/12"
+          },
+          {
+            "id": "item-011",
+            "question": "(9/6) - (1/7)",
+            "expected": "19/14",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "1/21"
+          },
+          {
+            "id": "item-012",
+            "question": "(9/3) - (5/4)",
+            "expected": "7/4",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "1/4"
+          },
+          {
+            "id": "item-013",
+            "question": "(5/11) * (1/9)",
+            "expected": "5/99",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5/99"
+          },
+          {
+            "id": "item-014",
+            "question": "(3/12) * (1/10)",
+            "expected": "1/40",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1/40"
+          },
+          {
+            "id": "item-015",
+            "question": "(3/7) / (9/5)",
+            "expected": "5/21",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5/21"
+          },
+          {
+            "id": "item-016",
+            "question": "(2/12) / (3/12)",
+            "expected": "2/3",
+            "correct": true,
+            "reason": "correct",
+            "actual": "2/3"
+          },
+          {
+            "id": "item-017",
+            "question": "5.57 + 3.18",
+            "expected": "35/4",
+            "correct": true,
+            "reason": "correct",
+            "actual": "8.75"
+          },
+          {
+            "id": "item-018",
+            "question": "8.71 - 3.18",
+            "expected": "553/100",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5.53"
+          },
+          {
+            "id": "item-019",
+            "question": "4 + 12 - 9 * 7 / 6",
+            "expected": "11/2",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "-11"
+          },
+          {
+            "id": "item-020",
+            "question": "(8 - 3) * 12 + 2 / 6",
+            "expected": "181/3",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "29"
+          }
+        ]
+      },
+      "pilot": {
+        "source_file": "outputs/training/v8-response-pilot/completed-export/pilot20-v8-matched-nonthinking-fresh-maths20.json",
+        "source_sha256": "ed28e743c89113f9d9c3a6b1ce5dc17326aa223e6588554e5fb91f482855b850",
+        "probes_file": "outputs/training/v8-response-pilot/completed-export/fresh-maths20.json",
+        "probes_sha256": "47642c6a82409157ec5e11425b02394f1fe0ea6f6c801bb5abbadd840955a003",
+        "count": 20,
+        "correct": 15,
+        "failed": 5,
+        "reason_counts": {
+          "correct": 15,
+          "wrong_value": 5
+        },
+        "format_review_ids": [],
+        "results": [
+          {
+            "id": "item-001",
+            "question": "411 + 93",
+            "expected": "504",
+            "correct": true,
+            "reason": "correct",
+            "actual": "504"
+          },
+          {
+            "id": "item-002",
+            "question": "424 + 50",
+            "expected": "474",
+            "correct": true,
+            "reason": "correct",
+            "actual": "474"
+          },
+          {
+            "id": "item-003",
+            "question": "203 - 48",
+            "expected": "155",
+            "correct": true,
+            "reason": "correct",
+            "actual": "155"
+          },
+          {
+            "id": "item-004",
+            "question": "-19 - 18",
+            "expected": "-37",
+            "correct": true,
+            "reason": "correct",
+            "actual": "-37"
+          },
+          {
+            "id": "item-005",
+            "question": "17 * 12",
+            "expected": "204",
+            "correct": true,
+            "reason": "correct",
+            "actual": "204"
+          },
+          {
+            "id": "item-006",
+            "question": "-32 * 12",
+            "expected": "-384",
+            "correct": true,
+            "reason": "correct",
+            "actual": "-384"
+          },
+          {
+            "id": "item-007",
+            "question": "407 / 11",
+            "expected": "37",
+            "correct": true,
+            "reason": "correct",
+            "actual": "37"
+          },
+          {
+            "id": "item-008",
+            "question": "559 / 13",
+            "expected": "43",
+            "correct": true,
+            "reason": "correct",
+            "actual": "43"
+          },
+          {
+            "id": "item-009",
+            "question": "(7/3) + (3/9)",
+            "expected": "8/3",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "3"
+          },
+          {
+            "id": "item-010",
+            "question": "(7/12) + (4/12)",
+            "expected": "11/12",
+            "correct": true,
+            "reason": "correct",
+            "actual": "11/12"
+          },
+          {
+            "id": "item-011",
+            "question": "(9/6) - (1/7)",
+            "expected": "19/14",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "1/21"
+          },
+          {
+            "id": "item-012",
+            "question": "(9/3) - (5/4)",
+            "expected": "7/4",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "1/4"
+          },
+          {
+            "id": "item-013",
+            "question": "(5/11) * (1/9)",
+            "expected": "5/99",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5/99"
+          },
+          {
+            "id": "item-014",
+            "question": "(3/12) * (1/10)",
+            "expected": "1/40",
+            "correct": true,
+            "reason": "correct",
+            "actual": "1/40"
+          },
+          {
+            "id": "item-015",
+            "question": "(3/7) / (9/5)",
+            "expected": "5/21",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5/21"
+          },
+          {
+            "id": "item-016",
+            "question": "(2/12) / (3/12)",
+            "expected": "2/3",
+            "correct": true,
+            "reason": "correct",
+            "actual": "2/3"
+          },
+          {
+            "id": "item-017",
+            "question": "5.57 + 3.18",
+            "expected": "35/4",
+            "correct": true,
+            "reason": "correct",
+            "actual": "8.75"
+          },
+          {
+            "id": "item-018",
+            "question": "8.71 - 3.18",
+            "expected": "553/100",
+            "correct": true,
+            "reason": "correct",
+            "actual": "5.53"
+          },
+          {
+            "id": "item-019",
+            "question": "4 + 12 - 9 * 7 / 6",
+            "expected": "11/2",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "-11"
+          },
+          {
+            "id": "item-020",
+            "question": "(8 - 3) * 12 + 2 / 6",
+            "expected": "181/3",
+            "correct": false,
+            "reason": "wrong_value",
+            "actual": "75"
+          }
+        ]
+      },
+      "improved_ids": [],
+      "regressed_ids": []
+    }
+  },
+  "teaching": {
+    "count": 36,
+    "graded": false,
+    "review_file": "outputs/training/v8-response-pilot/completed-export/scored-review/paired-teaching-review.txt",
+    "sources": {
+      "outputs/training/v8-response-pilot/completed-export/teaching-probes.json": "11f77e8bcfa71b777b0f8227a9b74e9fbd6fec7bf03a3e190938891f5fc572b0",
+      "outputs/training/v8-response-pilot/completed-export/base-v8-matched-nonthinking-teaching.json": "66cb60540d7ca6c549942877c7cd96e2068f38007de02cae4cea75eeb5aa94c0",
+      "outputs/training/v8-response-pilot/completed-export/pilot20-v8-matched-nonthinking-teaching.json": "5b8d1e6915833b30fa42c765ac4e5e82d02ff013303de0ccba590362faff97d4",
+      "outputs/training/v8-response-pilot/completed-export/system_prompt.txt": "a993e538b78360dea2a12acede643d30e0c7cc0a606f14d1f3750791d481cf99"
+    }
+  }
+}

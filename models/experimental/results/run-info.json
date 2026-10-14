@@ -1,0 +1,11 @@
+{
+  "base": "unsloth/gemma-4-E2B-it",
+  "base_revision": "d36bdd3855c82a6a1a23f7c459b749f5724ae75d",
+  "gpu": "NVIDIA L4",
+  "peak_cuda_gib": 12.796710968017578,
+  "global_step": 20,
+  "micro_batch": 32,
+  "gradient_accumulation": 1,
+  "effective_batch": 32,
+  "note": "Fresh-base response-only nonthinking pilot; stopped after20 of118 scheduled steps (640 example presentations); earlier turns are context only. Synthetic examples, not teacher approved. Compare raw local results before promotion."
+}

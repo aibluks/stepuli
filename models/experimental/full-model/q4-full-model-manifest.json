@@ -1,0 +1,26 @@
+{
+  "filename": "stepuli-v8-experimental-Q4_K_M.gguf",
+  "bytes": 3106738304,
+  "sha256": "00ab71619a71fad1260eb3ea5ce6071e4a4face0a2b36a4a7b0a918f0690626b",
+  "base_sha256": "740185b21d22ceb83a11c3aa62ad5842ef32c70f6096d756bbee85a1e4ec34b8",
+  "mixed_input_sha256": "55d5b4196d03615822361055b9d3f7bfbf15f868858e5cb00ccb6cfd6499f3b7",
+  "adapter_sha256": "5df52bab5cad5d667f302b897219e9dfb46f28dc16494854b0c10128bfced9ec",
+  "tensor_count": 601,
+  "adapter_merged_tensors": 140,
+  "unadapted_tensors_byte_verified_unchanged": 461,
+  "tensor_types": {
+    "F32": 353,
+    "BF16": 1,
+    "Q5_K": 1,
+    "Q4_K": 212,
+    "Q6_K": 34
+  },
+  "general_architecture": "gemma4",
+  "general_file_type": 15,
+  "general_name": "Stepuli V8 Experimental Q4 Derived",
+  "tokenizer_and_template_unchanged": true,
+  "quantizer_binary": "llama.cpp b11429 d81235049",
+  "allow_requantize": false,
+  "method": "Only140 adapted F16 tensors quantized under Q4_K_M policy. All461 unadapted tensors preserved byte-for-byte via explicit type overrides. Derived from an already Q4-quantized base, not a merge into originalBF16 weights.",
+  "renamed_for_publication": "Filename changed for Stepuli; model bytes and recorded internal general.name unchanged."
+}
