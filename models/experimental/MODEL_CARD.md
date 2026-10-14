@@ -16,7 +16,7 @@ tags:
 
 Publisher: **AI Bluks** (`aibluks`). Stepuli is an AI Bluks project.
 
-Stepuli is an experimental English maths tutoring project prepared for reproducible evaluation and further development. This source repository publishes experiment documentation; adapter and standalone model weights are distributed separately. Their public download availability has not yet been verified in this source release. It is **not a validated tutor for children**. It can falsely praise incorrect learner answers, lose the current conversation step, and produce incomplete worked solutions. Download availability does not mean this model is recommended over the untouched base.
+Stepuli is an experimental English maths tutoring project prepared for reproducible evaluation and further development. This source repository publishes experiment documentation; model weights are distributed separately. The small adapter has verified public downloads on Hugging Face and GitHub. The separate standalone full-model upload remains pending and unverified. It is **not a validated tutor for children**. It can falsely praise incorrect learner answers, lose the current conversation step, and produce incomplete worked solutions. Download availability does not mean this model is recommended over the untouched base.
 
 ## What was trained
 
@@ -63,7 +63,7 @@ See `full-model/README.md`, `full-model/validation-summary.md`, and the exact-ar
 
 This GitHub source repository contains documentation and evaluation evidence. Model weights are distributed separately:
 
-- The prepared `tutor-v8-response-pilot-lora.gguf` download is 6,556,960 bytes and requires an unchanged compatible base GGUF. The file is not stored in this Git tree.
+- The verified `tutor-v8-response-pilot-lora.gguf` download is 6,556,960 bytes and requires an unchanged compatible base GGUF. [Hugging Face](https://huggingface.co/aibluks/stepuli-gemma-4-e2b-v8-experimental/resolve/0c0c453e625cc463bb079ffdec17d577b9a570d1/tutor-v8-response-pilot-lora.gguf?download=true) and [GitHub pre-release](https://github.com/aibluks/stepuli/releases/download/v0.1.0-v8-experimental/tutor-v8-response-pilot-lora.gguf) full downloads both matched SHA-256 `5df52bab5cad5d667f302b897219e9dfb46f28dc16494854b0c10128bfced9ec`. The file is not stored in this Git tree.
 - `SHA256SUMS`: exact adapter integrity.
 - `LICENSE` and `NOTICE`: upstream license and modification provenance.
 - `results/`: sanitized evaluation results, settings and training evidence.

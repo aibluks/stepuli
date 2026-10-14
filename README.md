@@ -27,9 +27,9 @@ MODEL_API_URL=http://127.0.0.1:8080 MODEL_ID=stepuli-v8 npm start
 
 ## Experimental V8 adapter download
 
-[Prepared 6.56 MB adapter download location](https://huggingface.co/aibluks/stepuli-gemma-4-e2b-v8-experimental/resolve/main/tutor-v8-response-pilot-lora.gguf).
+[Download the 6.56 MB adapter from Hugging Face](https://huggingface.co/aibluks/stepuli-gemma-4-e2b-v8-experimental/resolve/0c0c453e625cc463bb079ffdec17d577b9a570d1/tutor-v8-response-pilot-lora.gguf?download=true) · [GitHub pre-release download](https://github.com/aibluks/stepuli/releases/download/v0.1.0-v8-experimental/tutor-v8-response-pilot-lora.gguf).
 
-Public availability of that Hugging Face download has not yet been verified in this source release. The weight file is not stored in this Git repository. Once available, download it into `models/experimental/tutor-v8-response-pilot-lora.gguf` before using the adapter command below.
+Both public adapter downloads were fetched anonymously and verified against the SHA-256 below. The weight file is distributed separately and is not stored in this Git repository. Save it as `models/experimental/tutor-v8-response-pilot-lora.gguf` before using the adapter command below. The adapter requires a matching unchanged base; it is not a standalone model. The separate 3.11 GB standalone upload remains pending and unverified.
 
 SHA-256: `5df52bab5cad5d667f302b897219e9dfb46f28dc16494854b0c10128bfced9ec`
 
