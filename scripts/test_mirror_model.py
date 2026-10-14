@@ -45,6 +45,24 @@ class MirrorTests(unittest.TestCase):
             run.assert_not_called()
             read.assert_not_called()
 
+    def test_local_rebuild_wrong_hash_never_splits(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            model = Path(tmp) / "rebuilt.gguf"
+            model.write_bytes(b"GGUFwrong")
+            with patch.object(mirror, "split_verified") as split:
+                with self.assertRaises(ValueError):
+                    mirror.prepare_local(model)
+                split.assert_not_called()
+
+    def test_last_bad_part_still_prevents_all_release_commands(self):
+        outcomes = [None] * 15 + [ValueError("last part corrupt")]
+        with patch.dict(mirror.os.environ, {"GITHUB_REPOSITORY": mirror.REPOSITORY, "GITHUB_REF": "refs/heads/main"}), patch.object(mirror, "check_file", side_effect=outcomes) as checks, patch.object(mirror.subprocess, "run") as run, patch.object(mirror.subprocess, "check_output") as read:
+            with self.assertRaises(ValueError):
+                mirror.upload()
+            self.assertEqual(checks.call_count, 16)
+            run.assert_not_called()
+            read.assert_not_called()
+
     def test_upload_rejects_other_repository_before_gh(self):
         with patch.dict(mirror.os.environ, {"GITHUB_REPOSITORY": "other/repo", "GITHUB_REF": "refs/heads/main"}), patch.object(mirror.subprocess, "run") as run:
             with self.assertRaises(ValueError):

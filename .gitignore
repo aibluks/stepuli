@@ -101,3 +101,9 @@ deployment-evidence.json
 !/models/experimental/transport/SHA256SUMS
 !/models/experimental/transport/download.sh
 !/models/experimental/transport/transport-manifest.json
+
+# Manual checksum-gated reproduction: reviewed text only.
+!/.github/workflows/rebuild-model.yml
+!/scripts/cloud_rebuild_model.py
+!/scripts/recipe.json
+!/scripts/test_cloud_rebuild_model.py

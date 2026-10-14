@@ -91,6 +91,20 @@ def prepare(value):
     print(f"Verified full model and all {len(data['parts'])} byte transport parts at HF revision {pinned}")
 
 
+def prepare_local(source):
+    """Split a rebuilt local file only after matching the immutable full-model checksum."""
+    data = manifest()
+    source = Path(source)
+    check_file(source, MODEL_BYTES, MODEL_SHA256)
+    with source.open("rb") as stream:
+        if stream.read(4) != b"GGUF":
+            raise ValueError("Missing GGUF header")
+    output = Path("model-transport")
+    output.mkdir()  # Never overwrite a previous job's outputs.
+    split_verified(source, output, data["parts"])
+    print("Verified rebuilt full model and all 16 frozen transport parts")
+
+
 def upload():
     if os.environ.get("GITHUB_REPOSITORY") != REPOSITORY or os.environ.get("GITHUB_REF") != "refs/heads/main":
         raise ValueError("Release writes are restricted to the canonical repository main branch")
