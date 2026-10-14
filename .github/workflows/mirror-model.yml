@@ -1,0 +1,33 @@
+name: Mirror verified experimental model
+# Operator must first verify the full public HF download at the supplied revision.
+on:
+  workflow_dispatch:
+    inputs:
+      hf_revision:
+        description: 'Verified public HF commit SHA (40 lowercase hex characters)'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: stepuli-experimental-model-mirror
+  cancel-in-progress: false
+jobs:
+  mirror:
+    if: github.repository == 'aibluks/stepuli' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Validate pinned input, download anonymously, and verify all bytes
+        env:
+          HF_REVISION: ${{ inputs.hf_revision }}
+        run: python3 scripts/mirror_model.py prepare
+      - name: Upload only the 16 verified transport parts to the existing release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/mirror_model.py upload

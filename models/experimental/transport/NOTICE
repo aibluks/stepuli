@@ -1,0 +1,15 @@
+Stepuli — published by AI Bluks.
+
+Stepuli experimental Gemma 4 E2B English maths tutor, V8 pilot.
+
+Base model: Gemma 4, developed by Google DeepMind.
+Training checkpoint: unsloth/gemma-4-E2B-it, revision d36bdd3855c82a6a1a23f7c459b749f5724ae75d.
+Official Gemma 4 license: https://ai.google.dev/gemma/apache_2
+
+MODIFICATION NOTICE: This project created attention-module LoRA adapter weights through a 20-step synthetic English maths tutor training experiment. The GGUF adapter is a conversion of those modified weights using llama.cpp commit 1b70350c92563449576bcbbf552994b1d1ed847d. The accompanying model card and evaluation evidence describe known limitations. The original base model weights are not included.
+
+This project is independent of Google DeepMind and Unsloth. No endorsement is implied. Apache 2.0 does not grant rights to upstream trademarks.
+
+ADDITIONAL MODIFICATION NOTICE: The standalone mixed model merges the V8 adapter once into the unchanged Gemma 4 E2B Q4_K_M base. The standalone compact model then quantizes the 140 merged tensors while retaining all unadapted tensors unchanged. These are derivatives of quantized weights, not recovered original BF16 weights. Their exact files and validation are documented in this directory.
+
+TRANSPORT PACKAGING NOTICE: The standalone model is divided into 16 byte transport parts for smaller downloads. Parts are not individually loadable GGUF files. Their ordered byte concatenation reconstructs the unchanged standalone GGUF with SHA256 00ab71619a71fad1260eb3ea5ce6071e4a4face0a2b36a4a7b0a918f0690626b. This packaging does not modify model weights.

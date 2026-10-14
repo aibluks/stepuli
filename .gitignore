@@ -88,3 +88,16 @@ deployment-evidence.json
 
 # Model weights are distributed separately; do not commit binaries.
 *.gguf
+
+# Manual model mirror: reviewed text only.
+!/.github/workflows/mirror-model.yml
+!/scripts/
+!/scripts/mirror_model.py
+!/scripts/test_mirror_model.py
+!/models/experimental/transport/
+!/models/experimental/transport/README.md
+!/models/experimental/transport/LICENSE
+!/models/experimental/transport/NOTICE
+!/models/experimental/transport/SHA256SUMS
+!/models/experimental/transport/download.sh
+!/models/experimental/transport/transport-manifest.json
