@@ -99,6 +99,22 @@ Path(sys.argv[3]).write_text(text)
         raise RuntimeError('Exact 461-line original override file was not reproduced.')
 
 
+def verify_runtime(export: Path, quantize: Path) -> None:
+    # This pinned exporter implements --version; the quantizer exposes only usage.
+    result = subprocess.run([str(export), '--version'], check=True, text=True,
+                            capture_output=True, timeout=30)
+    version = result.stdout + result.stderr
+    if 'build 11429' not in version or 'd81235049' not in version:
+        raise RuntimeError('Pinned official exporter version check failed.')
+    result = subprocess.run([str(quantize), '--help'], check=False, text=True,
+                            capture_output=True, timeout=30)
+    usage = result.stdout + result.stderr
+    if result.returncode != 1 or 'usage' not in usage.lower() or not all(
+            flag in usage for flag in ['--tensor-type-file', '--override-kv', 'Q4_K_M']):
+        raise RuntimeError('Pinned quantizer usage/required flags check failed.')
+    # The archive SHA256 checked before extraction authenticates both binaries.
+
+
 def prepare(output_dir: Path, recipe_path: Path = HERE / 'recipe.json') -> Path:
     recipe = load_recipe(recipe_path)
     validate_platform(platform.system(), platform.machine(), platform.mac_ver()[0], sys.version_info[:2])
@@ -128,12 +144,7 @@ def prepare(output_dir: Path, recipe_path: Path = HERE / 'recipe.json') -> Path:
         runtime = scratch / 'runtime' / recipe['inputs']['runtime']['directory']
         export = runtime / 'llama-export-lora'
         quantize = runtime / 'llama-quantize'
-        for executable in [export, quantize]:
-            result = subprocess.run([str(executable), '--version'], check=True, text=True,
-                                    capture_output=True, timeout=30)
-            version = result.stdout + result.stderr
-            if 'build 11429' not in version or 'd81235049' not in version:
-                raise RuntimeError('Pinned official runtime version check failed.')
+        verify_runtime(export, quantize)
         venv = scratch / 'venv'
         run([sys.executable, '-m', 'venv', str(venv)], timeout=120)
         python = venv / 'bin/python'

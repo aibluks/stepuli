@@ -1,4 +1,5 @@
 import hashlib
+import subprocess
 import json
 from pathlib import Path
 import tempfile
@@ -96,6 +97,36 @@ class RebuildGuards(unittest.TestCase):
                 usage.return_value.free=20_000_000_000
                 with self.assertRaises(RuntimeError):model.prepare(out)
             self.assertEqual(list(out.iterdir()),[]);self.assertEqual(sibling.read_text(),'unrelated')
+
+
+class RuntimeProbeTests(unittest.TestCase):
+    @staticmethod
+    def exporter():
+        return subprocess.CompletedProcess(['export'], 0, 'build 11429 d81235049', '')
+
+    @staticmethod
+    def quantizer(code=1, text='usage: llama-quantize --tensor-type-file --override-kv Q4_K_M'):
+        return subprocess.CompletedProcess(['quantize'], code, '', text)
+
+    def test_quantizer_usage_exit_one_is_the_expected_success(self):
+        with patch.object(model.subprocess, 'run', side_effect=[self.exporter(), self.quantizer()]) as run:
+            model.verify_runtime(Path('export'), Path('quantize'))
+            self.assertEqual(run.call_args_list[0].args[0], ['export', '--version'])
+            self.assertTrue(run.call_args_list[0].kwargs['check'])
+            self.assertEqual(run.call_args_list[1].args[0], ['quantize', '--help'])
+            self.assertFalse(run.call_args_list[1].kwargs['check'])
+
+    def test_exporter_failure_is_not_accepted_as_usage(self):
+        failure = subprocess.CalledProcessError(1, ['export', '--version'])
+        with patch.object(model.subprocess, 'run', side_effect=failure) as run:
+            with self.assertRaises(subprocess.CalledProcessError):
+                model.verify_runtime(Path('export'), Path('quantize'))
+            self.assertEqual(run.call_count, 1)
+
+    def test_quantizer_bad_status_or_missing_required_flag_fails(self):
+        for result in [self.quantizer(0), self.quantizer(2), self.quantizer(1, 'usage: --tensor-type-file Q4_K_M'), self.quantizer(1, '--tensor-type-file --override-kv Q4_K_M')]:
+            with self.subTest(result=result), patch.object(model.subprocess, 'run', side_effect=[self.exporter(), result]), self.assertRaises(RuntimeError):
+                model.verify_runtime(Path('export'), Path('quantize'))
 
 
 if __name__=='__main__':unittest.main()
