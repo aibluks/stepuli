@@ -29,7 +29,7 @@ MODEL_API_URL=http://127.0.0.1:8080 MODEL_ID=stepuli-v8 npm start
 
 [Download the 6.56 MB adapter from Hugging Face](https://huggingface.co/aibluks/stepuli-gemma-4-e2b-v8-experimental/resolve/0c0c453e625cc463bb079ffdec17d577b9a570d1/tutor-v8-response-pilot-lora.gguf?download=true) · [GitHub pre-release download](https://github.com/aibluks/stepuli/releases/download/v0.1.0-v8-experimental/tutor-v8-response-pilot-lora.gguf).
 
-Both public adapter downloads were fetched anonymously and verified against the SHA-256 below. The weight file is distributed separately and is not stored in this Git repository. Save it as `models/experimental/tutor-v8-response-pilot-lora.gguf` before using the adapter command below. The adapter requires a matching unchanged base; it is not a standalone model. The separate 3.11 GB standalone upload remains pending and unverified.
+Both public adapter downloads were fetched anonymously and verified against the SHA-256 below. The weight file is distributed separately and is not stored in this Git repository. Save it as `models/experimental/tutor-v8-response-pilot-lora.gguf` before using the adapter command below. The adapter requires a matching unchanged base; it is not a standalone model. The standalone model is available through the verified GitHub transport download below. The single-file Hugging Face upload remains pending and unverified.
 
 SHA-256: `5df52bab5cad5d667f302b897219e9dfb46f28dc16494854b0c10128bfced9ec`
 
@@ -52,19 +52,22 @@ llama-server -m "$BASE_GGUF"   --lora models/experimental/tutor-v8-response-pilo
 
 In another terminal, start the app with the matching alias as above. `-ngl 0` is a CPU starting point; acceleration and memory use depend on your build and device. An 8 GB Linux computer or Raspberry Pi has not been benchmarked for useful response speed, total memory, sustained thermals or multiple learners. Multiple monitors do not establish model-serving capacity.
 
-## Use an already downloaded standalone Q4 file
+## Download and run the standalone Q4 model
 
-A separate standalone export, `stepuli-v8-experimental-Q4_K_M.gguf`, was prepared locally. Its size is 3,106,738,304 bytes and SHA-256 is `00ab71619a71fad1260eb3ea5ce6071e4a4face0a2b36a4a7b0a918f0690626b`. It contains the base plus the adapter merged once and is **not included in this Git repository**. No verified public full-model download is claimed here.
+[GitHub experimental release](https://github.com/aibluks/stepuli/releases/tag/v0.1.0-v8-experimental) provides the complete standalone model as **16 byte transport parts** plus a [checked download script](https://github.com/aibluks/stepuli/releases/download/v0.1.0-v8-experimental/download.sh). All 16 public downloads were fetched anonymously; each part hash and the ordered reconstructed full-file SHA-256 matched the frozen model. The byte parts cannot be loaded separately as GGUF files.
 
-If you already have that exact downloaded file, run these commands from the `stepuli` checkout:
+The script downloads and checks the parts, then assembles `stepuli-v8-experimental-Q4_K_M.gguf`: **3,106,738,304 bytes**, SHA-256 `00ab71619a71fad1260eb3ea5ce6071e4a4face0a2b36a4a7b0a918f0690626b`. Allow at least **6.3 GB free disk** for retained parts plus the assembled file; failed-transfer backups may need extra space. Disk space is separate from runtime RAM. The single-file Hugging Face upload is still pending and unverified.
+
+From this checkout, copy the script into an ignored dedicated download directory and run it:
 
 ```sh
 mkdir -p models/local
-cp /path/to/downloaded/stepuli-v8-experimental-Q4_K_M.gguf models/local/
-# Linux: sha256sum models/local/stepuli-v8-experimental-Q4_K_M.gguf
-# macOS: shasum -a 256 models/local/stepuli-v8-experimental-Q4_K_M.gguf
+cp models/experimental/transport/download.sh models/local/
+sh models/local/download.sh
 llama-server --model models/local/stepuli-v8-experimental-Q4_K_M.gguf --host 127.0.0.1 --port 8082 --ctx-size 4096 --parallel 1 --threads 4 --jinja --alias stepuli-v8-experimental -ngl 0
 ```
+
+The script verifies the full checksum before reporting success. It retains the parts for user-controlled cleanup and checks existing files when resuming. The assembled model contains the base plus the V8 adapter merged once; **do not add `--lora`**. Weights remain outside this Git source tree.
 
 After verifying the checksum, start the app in another terminal:
 
@@ -72,7 +75,7 @@ After verifying the checksum, start the app in another terminal:
 MODEL_API_URL=http://127.0.0.1:8082 MODEL_ID=stepuli-v8-experimental npm start
 ```
 
-Do **not** add `--lora` for this standalone model. `models/local` is ignored by Git. The compact standalone file scored 14/20 on local fresh maths, with serious arithmetic and tutoring failures; those results are separate from the Colab BF16 pilot. It remains experimental.
+`models/local` is ignored by Git. The compact standalone file scored 14/20 on local fresh maths, with serious arithmetic and tutoring failures; those results are separate from the Colab BF16 pilot. It remains experimental.
 
 ## Teaching and offline scope
 
